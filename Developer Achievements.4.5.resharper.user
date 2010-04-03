@@ -1,0 +1,813 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="void" priority="14" />
+      <Item value="context" priority="0" />
+      <Item value="ctor" priority="27" />
+      <Item value="activityRepository" priority="0" />
+      <Item value="_activityRepository" priority="0" />
+      <Item value="DeveloperActivity" priority="22" />
+      <Item value="DataMember" priority="1" />
+      <Item value="internal" priority="7" />
+      <Item value="Debug" priority="6" />
+      <Item value="var" priority="55" />
+      <Item value="new" priority="76" />
+      <Item value="SubversionCheckInListenterTests" priority="0" />
+      <Item value="mockRepository" priority="1" />
+      <Item value="It" priority="11" />
+      <Item value="listener" priority="7" />
+      <Item value="Assert" priority="10" />
+      <Item value="actualActivity" priority="1" />
+      <Item value="typeof" priority="2" />
+      <Item value="SubversionCheckIn" priority="1" />
+      <Item value="event" priority="0" />
+      <Item value="public" priority="20" />
+      <Item value="activity" priority="13" />
+      <Item value="propg" priority="0" />
+      <Item value="if" priority="30" />
+      <Item value="SomethingHappened" priority="1" />
+      <Item value="this" priority="12" />
+      <Item value="DeveloperActivityEventArgs" priority="0" />
+      <Item value="IDisposable" priority="1" />
+      <Item value="static" priority="6" />
+      <Item value="string" priority="17" />
+      <Item value="MsmqConfiguration" priority="4" />
+      <Item value="return" priority="18" />
+      <Item value="MessageQueue" priority="7" />
+      <Item value="_queue" priority="7" />
+      <Item value="null" priority="5" />
+      <Item value="e" priority="7" />
+      <Item value="while" priority="2" />
+      <Item value="MsmqDeveloperActivitySerializer" priority="3" />
+      <Item value="Func" priority="0" />
+      <Item value="args" priority="6" />
+      <Item value="Message" priority="3" />
+      <Item value="message" priority="1" />
+      <Item value="serializer" priority="1" />
+      <Item value="_serializer" priority="2" />
+      <Item value="TriggerSomethingHappened" priority="0" />
+      <Item value="MsmqDeveloperActivityListenerTests" priority="0" />
+      <Item value="queue" priority="0" />
+      <Item value="MsMqDeveloperActivityRepository" priority="1" />
+      <Item value="repository" priority="12" />
+      <Item value="eventTriggeredCount" priority="0" />
+      <Item value="IServiceProvider" priority="1" />
+      <Item value="true" priority="6" />
+      <Item value="false" priority="7" />
+      <Item value="isStopped" priority="0" />
+      <Item value="private" priority="3" />
+      <Item value="IAsyncResult" priority="0" />
+      <Item value="test" priority="8" />
+      <Item value="_currentRetrieveRequest" priority="0" />
+      <Item value="try" priority="4" />
+      <Item value="MessageQueueException" priority="0" />
+      <Item value="TestFixtureSetUp" priority="1" />
+      <Item value="QueuePath" priority="1" />
+      <Item value="MsmqDeveloperActivityListener" priority="1" />
+      <Item value="interface" priority="5" />
+      <Item value="AwardService" priority="1" />
+      <Item value="mockAwardRepository" priority="1" />
+      <Item value="Award" priority="5" />
+      <Item value="award" priority="6" />
+      <Item value="service" priority="1" />
+      <Item value="User" priority="3" />
+      <Item value="_awardRepository" priority="1" />
+      <Item value="user" priority="2" />
+      <Item value="awardType" priority="1" />
+      <Item value="actualAward" priority="1" />
+      <Item value="MsmqTestFixtureBase" priority="0" />
+      <Item value="IUserRepository" priority="1" />
+      <Item value="userRepository" priority="0" />
+      <Item value="username" priority="3" />
+      <Item value="Username" priority="8" />
+      <Item value="mockUserRepository" priority="0" />
+      <Item value="BestowAward" priority="0" />
+      <Item value="Awards" priority="2" />
+      <Item value="awardService" priority="2" />
+      <Item value="Mock" priority="3" />
+      <Item value="IAwardGenerator" priority="5" />
+      <Item value="mockAwardGenerator" priority="0" />
+      <Item value="TimeStamp" priority="0" />
+      <Item value="DateTime" priority="1" />
+      <Item value="CheckIn" priority="5" />
+      <Item value="generator" priority="1" />
+      <Item value="List&lt;IAwardGenerator&gt;" priority="0" />
+      <Item value="base" priority="4" />
+      <Item value="mockAwardService" priority="0" />
+      <Item value="override" priority="9" />
+      <Item value="SetUp" priority="3" />
+      <Item value="_listener" priority="2" />
+      <Item value="_mockAwardService" priority="0" />
+      <Item value="foreach" priority="2" />
+      <Item value="IAwardRepository" priority="1" />
+      <Item value="expectedAward" priority="2" />
+      <Item value="setup" priority="1" />
+      <Item value="_service" priority="0" />
+      <Item value="_awardService" priority="0" />
+      <Item value="Times" priority="1" />
+      <Item value="bool" priority="2" />
+      <Item value="GeneratedAward" priority="0" />
+      <Item value="GeneratedAwards" priority="2" />
+      <Item value="generationResult" priority="0" />
+      <Item value="continue" priority="0" />
+      <Item value="AwardGenerationResult" priority="2" />
+      <Item value="CoverageExclude" priority="2" />
+      <Item value="ICollection" priority="0" />
+      <Item value="_generators" priority="0" />
+      <Item value="Id" priority="3" />
+      <Item value="x" priority="5" />
+      <Item value="virtual" priority="8" />
+      <Item value="long" priority="0" />
+      <Item value="KeyedEntity" priority="7" />
+      <Item value="where" priority="1" />
+      <Item value="CompositeIdentityPart" priority="1" />
+      <Item value="XmlExtensions" priority="0" />
+      <Item value="DeveloperActivityMapping" priority="1" />
+      <Item value="Map" priority="6" />
+      <Item value="Key" priority="4" />
+      <Item value="value" priority="0" />
+      <Item value="_username" priority="1" />
+      <Item value="DataContract" priority="0" />
+      <Item value="Serializable" priority="0" />
+      <Item value="throw" priority="4" />
+      <Item value="ArgumentNullException" priority="1" />
+      <Item value="ArgumentOutOfRangeException" priority="0" />
+      <Item value="T" priority="1" />
+      <Item value="Predicate" priority="0" />
+      <Item value="target" priority="0" />
+      <Item value="Repository" priority="7" />
+      <Item value="protected" priority="5" />
+      <Item value="abstract" priority="2" />
+      <Item value="CreateKey" priority="1" />
+      <Item value="KeyedEntityMapping" priority="1" />
+      <Item value="References" priority="0" />
+      <Item value="Developer" priority="12" />
+      <Item value="Type" priority="2" />
+      <Item value="AwardType" priority="1" />
+      <Item value="Name" priority="0" />
+      <Item value="config" priority="3" />
+      <Item value="sessionFactory" priority="0" />
+      <Item value="_session" priority="0" />
+      <Item value="int" priority="3" />
+      <Item value="default" priority="3" />
+      <Item value="_key" priority="1" />
+      <Item value="Guid" priority="2" />
+      <Item value="CreatedTimeStamp" priority="3" />
+      <Item value="ToString" priority="0" />
+      <Item value="NHibernate" priority="1" />
+      <Item value="cmd" priority="2" />
+      <Item value="DeveloperRepositoryBase" priority="1" />
+      <Item value="IgnoreDataMember" priority="0" />
+      <Item value="Expression&lt;Func&lt;DeveloperActivity,bool&gt;&gt;" priority="0" />
+      <Item value="StringComparison" priority="0" />
+      <Item value="obj" priority="2" />
+      <Item value="GetHashCode" priority="0" />
+      <Item value="as" priority="0" />
+      <Item value="DatabaseName" priority="0" />
+      <Item value="TestFixtureSetUpAttribute" priority="0" />
+      <Item value="InitializeDatabase" priority="0" />
+      <Item value="match" priority="0" />
+      <Item value="DatabaseTestBase" priority="0" />
+      <Item value="lock" priority="1" />
+      <Item value="object" priority="3" />
+      <Item value="DatabaseInitialized" priority="0" />
+      <Item value="IRepository" priority="4" />
+      <Item value="_repository" priority="5" />
+      <Item value="_sessionFactory" priority="0" />
+      <Item value="checked" priority="0" />
+      <Item value="JoinedSubClassPart" priority="1" />
+      <Item value="FluentConfiguration" priority="0" />
+      <Item value="_configuration" priority="2" />
+      <Item value="GetConfiguration" priority="0" />
+      <Item value="IPersistenceConfigurer" priority="0" />
+      <Item value="GetConnectionInfo" priority="0" />
+      <Item value="database" priority="0" />
+      <Item value="Schema" priority="0" />
+      <Item value="ApplicationException" priority="0" />
+      <Item value="server" priority="2" />
+      <Item value="Database" priority="1" />
+      <Item value="SqlCommand" priority="2" />
+      <Item value="databaseName" priority="4" />
+      <Item value="connection" priority="3" />
+      <Item value="using" priority="2" />
+      <Item value="SqlConnection" priority="6" />
+      <Item value="conn" priority="1" />
+      <Item value="out" priority="1" />
+      <Item value="serverName" priority="1" />
+      <Item value="SqlConnectionStringBuilder" priority="1" />
+      <Item value="bld" priority="0" />
+      <Item value="InitialCatalog" priority="0" />
+      <Item value="Regex" priority="1" />
+      <Item value="DefaultConnectionName" priority="0" />
+      <Item value="originalString" priority="0" />
+      <Item value="Identifier" priority="1" />
+      <Item value="checkinDetails" priority="0" />
+      <Item value="parameters" priority="2" />
+      <Item value="SvnLookParameters" priority="0" />
+      <Item value="RepositoryPath" priority="1" />
+      <Item value="DeveloperActivityRepositoryBase" priority="0" />
+      <Item value="expectedActivity" priority="1" />
+      <Item value="ex" priority="1" />
+      <Item value="IDeveloperActivityRepository" priority="4" />
+      <Item value="RegexOptions" priority="0" />
+      <Item value="MsSqlNHibernateConfiguration" priority="0" />
+      <Item value="ConsoleTraceListener" priority="0" />
+      <Item value="Container" priority="1" />
+      <Item value="Application" priority="1" />
+      <Item value="activityListener" priority="0" />
+      <Item value="ThreadStaticAttribute" priority="1" />
+      <Item value="TimeSpan" priority="2" />
+      <Item value="Console" priority="1" />
+      <Item value="ExecutionContext" priority="0" />
+      <Item value="_activityListener" priority="0" />
+      <Item value="debugSetting" priority="0" />
+      <Item value="Length" priority="0" />
+      <Item value="IEnumerable" priority="1" />
+      <Item value="awardRepository" priority="0" />
+      <Item value="developerRepository" priority="2" />
+      <Item value="generators" priority="0" />
+      <Item value="builder" priority="3" />
+      <Item value="configuration" priority="0" />
+      <Item value="ISession" priority="1" />
+      <Item value="ISessionFactory" priority="0" />
+      <Item value="DependencyModule" priority="0" />
+      <Item value="catalyst" priority="0" />
+      <Item value="developer" priority="4" />
+      <Item value="TriggerAwardGeneration" priority="0" />
+      <Item value="PollDelay" priority="1" />
+      <Item value="PollingDeveloperActivityListener" priority="0" />
+      <Item value="_shouldKeepGoing" priority="0" />
+      <Item value="CreateTestActivity" priority="0" />
+      <Item value="ActivityTypeSelector" priority="0" />
+      <Item value="switch" priority="0" />
+      <Item value="activityType" priority="1" />
+      <Item value="case" priority="1" />
+      <Item value="BrokenBuild" priority="1" />
+      <Item value="CleanBuild" priority="2" />
+      <Item value="UsernameInput" priority="0" />
+      <Item value="NotSupportedException" priority="0" />
+      <Item value="ReportUrl" priority="1" />
+      <Item value="BuildMapping" priority="0" />
+      <Item value="CleanBuildMapping" priority="1" />
+      <Item value="Join" priority="1" />
+      <Item value="DiscriminatorValue" priority="3" />
+      <Item value="class" priority="4" />
+      <Item value="DiscriminatorPart" priority="0" />
+      <Item value="SubClassPart" priority="0" />
+      <Item value="RepositoryTestBase" priority="0" />
+      <Item value="Result" priority="1" />
+      <Item value="BuildResult" priority="1" />
+      <Item value="DeveloperMapping" priority="0" />
+      <Item value="Table" priority="0" />
+      <Item value="DiscriminateSubClassesOnColumn" priority="0" />
+      <Item value="catch" priority="0" />
+      <Item value="sqlEx" priority="0" />
+      <Item value="else" priority="0" />
+      <Item value="HibernateException" priority="0" />
+      <Item value="DeveloperRepository" priority="0" />
+      <Item value="baseRepository" priority="5" />
+      <Item value="expectedDeveloper" priority="0" />
+      <Item value="AwardRepository" priority="0" />
+      <Item value="ExpectedException" priority="0" />
+      <Item value="timeSpan" priority="4" />
+      <Item value="SleepHelper" priority="3" />
+      <Item value="_sleeper" priority="1" />
+      <Item value="RealSleeper" priority="0" />
+      <Item value="milliseconds" priority="2" />
+      <Item value="Thread" priority="0" />
+      <Item value="ISleeper" priority="0" />
+      <Item value="LastSleepTimeInMilliseconds" priority="0" />
+      <Item value="Sleeper" priority="0" />
+      <Item value="timeToSleep" priority="0" />
+      <Item value="SleepCount" priority="0" />
+      <Item value="sleeper" priority="0" />
+      <Item value="Action" priority="0" />
+      <Item value="MockSleeper" priority="2" />
+      <Item value="PollingDeveloperActivityListenerTests" priority="0" />
+      <Item value="TearDown" priority="0" />
+      <Item value="type" priority="0" />
+      <Item value="Exception" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Mock`1">
+      <Item value="Setup" priority="9" />
+      <Item value="Object" priority="14" />
+      <Item value="Verify" priority="5" />
+      <Item value="VerifyAll" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.IDeveloperActivityRepository">
+      <Item value="Save" priority="2" />
+      <Item value="RetrieveLast" priority="0" />
+      <Item value="RetrieveNext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Moq.It">
+      <Item value="IsAny" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.ISetup`1">
+      <Item value="Callback" priority="2" />
+      <Item value="Raises" priority="0" />
+      <Item value="Verifiable" priority="5" />
+      <Item value="Throws" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Subversion.SubversionCheckInListener">
+      <Item value="OnCommit" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="That" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.ICallbackResult">
+      <Item value="Verifiable" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.SyntaxHelpers.Is">
+      <Item value="TypeOf" priority="0" />
+      <Item value="EqualTo" priority="3" />
+      <Item value="Not" priority="0" />
+      <Item value="SameAs" priority="0" />
+      <Item value="GreaterThanOrEqualTo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DeveloperAchievements.Activities.Msmq.MsmqConfiguration">
+      <Item value="GetQueue" priority="0" />
+      <Item value="CreateQueue" priority="2" />
+      <Item value="MessageQueue" priority="0" />
+      <Item value="QueuePath" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debug">
+      <Item value="WriteLine" priority="10" />
+      <Item value="Listeners" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Messaging.MessageQueue">
+      <Item value="Dispose" priority="1" />
+      <Item value="ReceiveCompleted" priority="1" />
+      <Item value="BeginReceive" priority="1" />
+      <Item value="EndReceive" priority="0" />
+      <Item value="Send" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Messaging.ReceiveCompletedEventArgs">
+      <Item value="Message" priority="5" />
+      <Item value="AsyncResult" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Messaging.Message">
+      <Item value="Label" priority="0" />
+      <Item value="DestinationQueue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.Msmq.MsmqDeveloperActivitySerializer">
+      <Item value="Serialize" priority="0" />
+      <Item value="Deserialize" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.Msmq.MsmqDeveloperActivityListener">
+      <Item value="DeveloperActivityOccurred" priority="0" />
+      <Item value="Start" priority="0" />
+      <Item value="Stop" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.DeveloperActivityEventArgs">
+      <Item value="Activity" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.Msmq.MsMqDeveloperActivityRepository">
+      <Item value="Save" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="Sleep" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.TimeSpan">
+      <Item value="FromSeconds" priority="2" />
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IAsyncResult">
+      <Item value="AsyncWaitHandle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.WaitHandle">
+      <Item value="Close" priority="0" />
+      <Item value="WaitOne" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Messaging.MessageQueue">
+      <Item value="Exists" priority="1" />
+      <Item value="Create" priority="0" />
+      <Item value="Delete" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format" priority="6" />
+      <Item value="Compare" priority="0" />
+      <Item value="IsNullOrEmpty" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="EndsWith" priority="0" />
+      <Item value="ToLower" priority="1" />
+      <Item value="Replace" priority="2" />
+      <Item value="GetHashCode" priority="0" />
+      <Item value="Equals" priority="0" />
+      <Item value="Contains" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.IAwardRepository">
+      <Item value="Save" priority="4" />
+      <Item value="setup" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.Award">
+      <Item value="User" priority="0" />
+      <Item value="Type" priority="1" />
+      <Item value="Developer" priority="0" />
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.User">
+      <Item value="Username" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.AwardType">
+      <Item value="Name" priority="0" />
+      <Item value="Key" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.IUserRepository">
+      <Item value="GetByUsername" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.ISetup`2">
+      <Item value="Returns" priority="2" />
+      <Item value="Callback" priority="0" />
+      <Item value="Throws" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.IAwardService">
+      <Item value="BestowAward" priority="0" />
+      <Item value="GenerateAwards" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.DeveloperActivity">
+      <Item value="Username" priority="2" />
+      <Item value="CreatedTimeStamp" priority="1" />
+      <Item value="Processed" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.IAwardGenerator">
+      <Item value="Generate" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.AwardService">
+      <Item value="GenerateAwards" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.IReturnsResult`1">
+      <Item value="Verifiable" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Moq.Times">
+      <Item value="Never" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:T">
+      <Item value="CreatedTimeStamp" priority="0" />
+      <Item value="LastUpdateTimeStamp" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.NHibernate.Repository">
+      <Item value="Delete" priority="0" />
+      <Item value="SaveAll" priority="0" />
+      <Item value="Save" priority="4" />
+      <Item value="Flush" priority="1" />
+      <Item value="Find" priority="0" />
+      <Item value="FindByKey" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IQueryable`1">
+      <Item value="FirstOrDefault" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.IRepository">
+      <Item value="Save" priority="1" />
+      <Item value="Find" priority="0" />
+      <Item value="FindBy" priority="0" />
+      <Item value="FindByKey" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int64">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Developer">
+      <Item value="Username" priority="0" />
+      <Item value="Key" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:StatsEnvy.DataAccess.NHibernateConfiguration">
+      <Item value="CreateSessionFactory" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISessionFactory">
+      <Item value="OpenSession" priority="2" />
+      <Item value="GetCurrentSession" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISession">
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="HasValue" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.OneToOnePart`1">
+      <Item value="Cascade" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CascadeExpression`1">
+      <Item value="SaveUpdate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Guid">
+      <Item value="NewGuid" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Guid">
+      <Item value="ToString" priority="1" />
+      <Item value="ToByteArray" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="Ticks" priority="0" />
+      <Item value="ToString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.PropertyMap">
+      <Item value="PropertyType" priority="0" />
+      <Item value="Property" priority="0" />
+      <Item value="AutoNumber" priority="0" />
+      <Item value="FormulaIs" priority="0" />
+      <Item value="CustomTypeIs" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.IDbCommand">
+      <Item value="Parameters" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.PropertyPart">
+      <Item value="Default" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.IRepository">
+      <Item value="FindBy" priority="0" />
+      <Item value="Query" priority="0" />
+      <Item value="Save" priority="3" />
+      <Item value="FindByKey" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="OrderBy" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.StringComparison">
+      <Item value="OrdinalIgnoreCase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.KeyedEntity">
+      <Item value="Id" priority="1" />
+      <Item value="GetHashCode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="ConnectionStrings" priority="0" />
+      <Item value="AppSettings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Configuration.ConnectionStringSettings">
+      <Item value="ConnectionString" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.RegularExpressions.Regex">
+      <Item value="Match" priority="1" />
+      <Item value="Replace" priority="0" />
+      <Item value="IsMatch" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Match">
+      <Item value="Captures" priority="0" />
+      <Item value="Groups" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Capture">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Group">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities.CheckinMapping">
+      <Item value="Polymorphism" priority="0" />
+      <Item value="Schema" priority="0" />
+      <Item value="KeyColumn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.CheckIn">
+      <Item value="CheckinIdentifier" priority="0" />
+      <Item value="Message" priority="0" />
+      <Item value="RepositoryPath" priority="0" />
+      <Item value="Processed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SqlServer.Management.Smo.Database">
+      <Item value="Schemas" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SqlServer.Management.Smo.SchemaCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SqlServer.Management.Smo.Schema">
+      <Item value="Create" priority="0" />
+      <Item value="Owner" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SqlServer.Management.Smo.Server">
+      <Item value="Databases" priority="2" />
+      <Item value="ConnectionContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlCommand">
+      <Item value="ExecuteNonQuery" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlConnection">
+      <Item value="Open" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.SqlServer.Management.Common.ServerConnection">
+      <Item value="ExecuteNonQuery" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlConnectionStringBuilder">
+      <Item value="DataSource" priority="0" />
+      <Item value="ConnectionString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Subversion.InterOp.SvnInfo">
+      <Item value="Message" priority="0" />
+      <Item value="Parameters" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Subversion.InterOp.SvnLookParameters">
+      <Item value="Identifier" priority="0" />
+      <Item value="RepositoryPath" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.NHibernate.Activities.DeveloperActivityRepository">
+      <Item value="RetrieveLast" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Messaging.MessageQueueException">
+      <Item value="Message" priority="0" />
+      <Item value="StackTrace" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="1" />
+      <Item value="Source" priority="0" />
+      <Item value="StackTrace" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.RegularExpressions.RegexOptions">
+      <Item value="IgnoreCase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.NHibernate.Configuration.MsSqlNHibernateConfiguration">
+      <Item value="CreateDatabase" priority="0" />
+      <Item value="CreateSessionFactory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Autofac.IContainer">
+      <Item value="Resolve" priority="1" />
+      <Item value="InjectProperties" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine" priority="1" />
+      <Item value="Error" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.TraceListenerCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="WriteLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.IDeveloperActivityListener">
+      <Item value="Start" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Autofac.Registrars.IReflectiveRegistrar">
+      <Item value="As" priority="2" />
+      <Item value="MemberOf" priority="1" />
+      <Item value="FactoryScoped" priority="0" />
+      <Item value="SingletonScoped" priority="1" />
+      <Item value="Named" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Autofac.Builder.ContainerBuilder">
+      <Item value="RegisterCollection" priority="0" />
+      <Item value="RegisterGeneratedFactory" priority="0" />
+      <Item value="Register" priority="1" />
+      <Item value="RegisterModule" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Autofac.Registrars.IConcreteRegistrar">
+      <Item value="As" priority="1" />
+      <Item value="SingletonScoped" priority="0" />
+      <Item value="ContainerScoped" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Linq.Enumerable">
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Autofac.IContext">
+      <Item value="Resolve" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.NHibernate.Configuration.NHibernateConfiguration">
+      <Item value="CreateSessionFactory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="ToString" priority="0" />
+      <Item value="TotalMilliseconds" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="SelectedText" priority="0" />
+      <Item value="SelectedItem" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.Build">
+      <Item value="ReportUrl" priority="0" />
+      <Item value="Username" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities.BuildMapping">
+      <Item value="Subclass" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.SubclassMap`1">
+      <Item value="DiscriminatorValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DeveloperAchievements.Activities.BuildResult">
+      <Item value="Success" priority="1" />
+      <Item value="Failed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities.DeveloperActivityMapping">
+      <Item value="SchemaName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlException">
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.Db.MsSqlConfiguration">
+      <Item value="ShowSql" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.Task">
+      <Item value="Action" priority="0" />
+      <Item value="TaskId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.DeveloperRepository">
+      <Item value="GetOrCreate" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NUnit.Framework.Constraints.ConstraintBuilder">
+      <Item value="Null" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Awards.AwardRepository">
+      <Item value="Save" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.SleepHelper+ISleeper">
+      <Item value="Sleep" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Action`1">
+      <Item value="Invoke" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DeveloperAchievements.SleepHelper">
+      <Item value="Sleeper" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.Activities.PollingDeveloperActivityListener">
+      <Item value="Stop" priority="0" />
+      <Item value="Start" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DeveloperAchievements.MockSleeper">
+      <Item value="Sleep" priority="0" />
+      <Item value="SleepCount" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:Build.cs" caret="320" fromTop="15" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/f:Repository.cs" caret="2392" fromTop="23" />
+      <File id="5C8E390A-0301-445E-84F6-B534187F6EF4/f:Program.cs" caret="13" fromTop="0" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/f:App.config" caret="211" fromTop="3" />
+      <File id="5C8E390A-0301-445E-84F6-B534187F6EF4/f:Form1.cs" caret="1317" fromTop="32" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Integration/d:DataAccess/d:NHibernate/d:Activities/f:BuildActivityTests.cs" caret="638" fromTop="17" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/d:Mappings/d:Activities/f:DeveloperActivityMapping.cs" caret="535" fromTop="14" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:DeveloperActivity.cs" caret="1506" fromTop="42" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:Task.cs" caret="236" fromTop="6" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/d:Mappings/d:Activities/f:CheckinMapping.cs" caret="423" fromTop="11" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/d:Mappings/d:Activities/f:BuildMapping.cs" caret="244" fromTop="7" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Integration/d:DataAccess/d:NHibernate/f:RepositoryTests.cs" caret="460" fromTop="16" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Integration/d:DataAccess/d:NHibernate/d:Activities/f:DeveloperActivityRepositoryTests.cs" caret="849" fromTop="17" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Integration/d:DataAccess/d:NHibernate/f:RepositoryTestBase.cs" caret="0" fromTop="0" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/d:Configuration/f:NHibernateConfiguration.cs" caret="371" fromTop="11" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/d:Configuration/f:MsSqlNHibernateConfiguration.cs" caret="496" fromTop="14" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Awards/f:AwardRepositoryTests.cs" caret="644" fromTop="24" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:IDeveloperRepository.cs" caret="57" fromTop="2" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:DeveloperRepository.cs" caret="102" fromTop="4" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="1077" fromTop="43" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:DeveloperActivityListenerBase.cs" caret="533" fromTop="17" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="3534" fromTop="97" />
+      <File id="AF442CF5-0853-47A9-A151-011798E7AA5A/f:Application.cs" caret="0" fromTop="0" />
+      <File id="AF442CF5-0853-47A9-A151-011798E7AA5A/f:Program.cs" caret="3280" fromTop="29" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:PollingDeveloperActivityListener.cs" caret="40" fromTop="1" />
+      <File id="BBC006B1-09D8-4E3E-9D2F-737D799A10FA/d:Activities/f:DeveloperActivityRepository.cs" caret="0" fromTop="0" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardRepository.cs" caret="36" fromTop="0" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardService.cs" caret="1447" fromTop="16" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardType.cs" caret="276" fromTop="11" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:Award.cs" caret="251" fromTop="10" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="954" fromTop="14" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="952" fromTop="22" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="1430" fromTop="25" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="1523" fromTop="23" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="2016" fromTop="39" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="1663" fromTop="29" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/f:SleepHelper.cs" caret="1874" fromTop="39" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="787" fromTop="26" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="982" fromTop="31" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:PollingDeveloperActivityListener.cs" caret="2680" fromTop="39" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="1721" fromTop="34" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="1721" fromTop="32" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="2312" fromTop="43" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="2538" fromTop="29" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="2844" fromTop="35" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="3943" fromTop="43" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="3060" fromTop="15" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="3313" fromTop="20" />
+      <File id="D6DE7341-50A9-415A-9297-396872D2ECF3/d:Unit/d:Common/d:Activities/f:PollingDeveloperActivityListenerTests.cs" caret="3614" fromTop="27" />
+      <File id="AF442CF5-0853-47A9-A151-011798E7AA5A/f:Program.cs" caret="2014" fromTop="7" />
+      <File id="AF442CF5-0853-47A9-A151-011798E7AA5A/f:Program.cs" caret="2394" fromTop="11" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Activities/f:PollingDeveloperActivityListener.cs" caret="40" fromTop="1" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardService.cs" caret="379" fromTop="11" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardService.cs" caret="53" fromTop="1" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:Award.cs" caret="71" fromTop="2" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardRepository.cs" caret="80" fromTop="2" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardService.cs" caret="355" fromTop="10" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardService.cs" caret="1742" fromTop="21" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:AwardService.cs" caret="1174" fromTop="10" />
+      <File id="7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00/d:Awards/f:Award.cs" caret="219" fromTop="7" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>
