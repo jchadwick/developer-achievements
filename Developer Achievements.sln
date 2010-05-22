@@ -1,14 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D6DE7341-50A9-415A-9297-396872D2ECF3}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F9C66DB2-BF6F-4A52-B074-3E2E9A9F7204}"
 	ProjectSection(SolutionItems) = preProject
 		docs\System Diagram.vsd = docs\System Diagram.vsd
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D6DE7341-50A9-415A-9297-396872D2ECF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subversion", "Subversion\Subversion.csproj", "{3B4B071A-EF5B-4BBC-9F15-6FCE8D6D83DD}"
 EndProject
