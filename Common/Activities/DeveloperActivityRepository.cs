@@ -1,6 +1,6 @@
 namespace DeveloperAchievements.Activities
 {
-    public abstract class DeveloperActivityRepository : IDeveloperActivityRepository
+    public class DeveloperActivityRepository : IDeveloperActivityRepository
     {
         private readonly IRepository _repository;
 
@@ -9,7 +9,7 @@ namespace DeveloperAchievements.Activities
             get { return _repository; }
         }
 
-        protected DeveloperActivityRepository(IRepository repository)
+        public DeveloperActivityRepository(IRepository repository)
         {
             _repository = repository;
         }

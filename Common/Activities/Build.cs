@@ -4,8 +4,10 @@ namespace DeveloperAchievements.Achievements
 {
     public enum BuildResult : short
     {
+        Failed = -1,
+        Unknown = 0,
         Success = 1,
-        Failed = -1
+        Fixed = 2
     }
 
     public class Build : DeveloperActivity

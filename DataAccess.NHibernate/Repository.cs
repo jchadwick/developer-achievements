@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using DeveloperAchievements.DataAccess.NHibernate.Configuration;
 using NHibernate;
 using NHibernate.Linq;
 using Expression=NHibernate.Criterion.Expression;
@@ -99,5 +100,12 @@ namespace DeveloperAchievements.DataAccess.NHibernate
         {
             Session.Dispose();
         }
+
+        public static Repository CreateForSingleUse()
+        {
+            var config = new MsSqlNHibernateConfiguration();
+            var repository = new Repository(config.CreateSessionFactory().OpenSession());
+            return repository;
+       }
     }
 }

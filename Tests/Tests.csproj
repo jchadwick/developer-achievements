@@ -10,12 +10,28 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DeveloperAchievements</RootNamespace>
     <AssemblyName>DeveloperAchievements.Tests</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,6 +118,12 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.CruiseControl.Core">
+      <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.CruiseControl.Remote">
+      <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Remote.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\DataAccess\NHibernate\Activities\BuildActivityTests.cs" />
@@ -113,6 +135,7 @@
     <Compile Include="Unit\Common\Achievements\AchievementRepositoryTests.cs" />
     <Compile Include="Unit\Common\Achievements\AchievementServiceTests.cs" />
     <Compile Include="Unit\Common\DeveloperRepositoryTests.cs" />
+    <Compile Include="Unit\CruiseControl\DeveloperAchievementsTaskTests.cs" />
     <Compile Include="Unit\Subversion\ConsoleTests.cs" />
     <Compile Include="Unit\Subversion\SubversionCheckInEventTests.cs" />
   </ItemGroup>
@@ -120,6 +143,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CruiseControl\CruiseControl.csproj">
+      <Project>{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}</Project>
+      <Name>CruiseControl</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess.NHibernate\DataAccess.NHibernate.csproj">
       <Project>{BBC006B1-09D8-4E3E-9D2F-737D799A10FA}</Project>
@@ -136,6 +163,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Integration\Common\Activities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
