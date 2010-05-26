@@ -1,4 +1,5 @@
 using DeveloperAchievements.Achievements;
+using DeveloperAchievements.Activities;
 using NUnit.Framework;
 
 namespace DeveloperAchievements.Integration.DataAccess.NHibernate.Activities

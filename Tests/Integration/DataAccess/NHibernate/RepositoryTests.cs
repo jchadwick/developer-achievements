@@ -25,7 +25,7 @@ namespace DeveloperAchievements.Integration.DataAccess.NHibernate
                 repository.Save(developer);
                 repository.Save(awardType);
                 repository.Save(expectedAchievment);
-                awardId = expectedAchievment.Id;
+                awardId = expectedAchievment.ID;
             }
 
             using(var repository = new Repository(SessionFactory.OpenSession()))
@@ -52,7 +52,7 @@ namespace DeveloperAchievements.Integration.DataAccess.NHibernate
 
                 repository.Save(developer);
                 repository.Save(history);
-                historyId = history.Id;
+                historyId = history.ID;
             }
 
             using (var repository = new Repository(SessionFactory.OpenSession()))

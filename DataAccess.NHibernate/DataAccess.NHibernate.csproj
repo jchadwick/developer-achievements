@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Configuration\MsSqlNHibernateConfiguration.cs" />
     <Compile Include="DependencyModule.cs" />
+    <Compile Include="NHibernateDeveloperActivityDataContext.cs" />
     <Compile Include="Mappings\Activities\BuildMapping.cs" />
     <Compile Include="Mappings\Activities\CheckinMapping.cs" />
     <Compile Include="Mappings\Activities\DeveloperHistoryMapping.cs">
@@ -69,7 +70,6 @@
     <Compile Include="Configuration\NHibernateConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="SessionFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
@@ -119,11 +119,13 @@
       <HintPath>..\References\nhibernate\NHibernate.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>

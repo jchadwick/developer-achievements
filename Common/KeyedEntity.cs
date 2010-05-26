@@ -1,13 +1,13 @@
 using System;
+using System.Data.Services.Common;
 using System.Runtime.Serialization;
 
 namespace DeveloperAchievements
 {
-    [DataContract, Serializable]
     public abstract class KeyedEntity
     {
         [DataMember]
-        protected internal virtual long Id { get; private set; }
+        public virtual long ID { get; set; }
 
         private string _key;
         [DataMember]
@@ -45,7 +45,7 @@ namespace DeveloperAchievements
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if(Id != default(int) && obj.Id != default(int)) return Id == obj.Id;
+            if(ID != default(int) && obj.ID != default(int)) return ID == obj.ID;
             return GetHashCode() == obj.GetHashCode();
         }
 

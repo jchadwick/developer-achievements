@@ -12,7 +12,7 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities
             Map(x => x.TotalCheckins);
             Map(x => x.TotalTaskActivities);
 
-            HasMany(x => x.PreviousActivity);
+//            HasMany(x => x.PreviousActivity);
         }
     }
 }

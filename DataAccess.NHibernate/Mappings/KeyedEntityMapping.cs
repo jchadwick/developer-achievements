@@ -7,7 +7,7 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Mappings
     {
         public KeyedEntityMapping()
         {
-            Id(x => x.Id, "Id").GeneratedBy.Native();
+            Id(x => x.ID, "ID").GeneratedBy.Native();
             Map(x => x.Key, "[Key]")
                 .Not.Nullable()
                 .Unique();

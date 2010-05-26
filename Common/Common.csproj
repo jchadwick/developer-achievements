@@ -57,6 +57,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -80,6 +82,8 @@
     <Compile Include="Activities\DeveloperActivity.cs" />
     <Compile Include="Activities\DeveloperHistory.cs" />
     <Compile Include="Activities\IDeveloperActivitySource.cs" />
+    <Compile Include="DataAccess\DeveloperActivityDataContext.cs" />
+    <Compile Include="DataAccess\DeveloperActivityDataContextBase.cs" />
     <Compile Include="Util\PollerBase.cs" />
     <Compile Include="Activities\PollingDeveloperActivityListener.cs" />
     <Compile Include="Activities\DeveloperActivityRepository.cs" />

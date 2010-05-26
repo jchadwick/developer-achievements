@@ -1,6 +1,10 @@
 ﻿using System.Reflection;
+using DeveloperAchievements.DataAccess.NHibernate.Mappings;
+using DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities;
+using FluentNHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using FluentNHibernate.Conventions.Helpers;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
@@ -33,7 +37,16 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Configuration
         {
             return Fluently.Configure()
                 .Database(GetConnectionInfo())
-                .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));
+                .Mappings(m => m.FluentMappings
+                                    .Add<DeveloperMapping>()
+                                    .Add<AchievementMapping>()
+                                    .Add<AchievementTypeMapping>()
+                                    .Add<CheckinMapping>()
+                                .Conventions.Add(
+                                    PrimaryKey.Name.Is(x => "ID"),
+                                    ForeignKey.EndsWith("ID")
+                                )
+                        );
         }
 
         protected abstract IPersistenceConfigurer GetConnectionInfo();
