@@ -1,44 +1,47 @@
 ﻿using System.ComponentModel.Composition;
-using Autofac;
-using Autofac.Builder;
 using DeveloperAchievements.Activities;
 using DeveloperAchievements.DataAccess.NHibernate.Configuration;
 using NHibernate;
+using Ninject;
+using Ninject.Modules;
 
 namespace DeveloperAchievements.DataAccess.NHibernate
 {
-    [Export(typeof(IModule))]
-    public class DependencyModule : Module 
+    [Export(typeof(INinjectModule))]
+    public class DependencyModule : NinjectModule
     {
-        protected override void Load(ContainerBuilder builder)
+        public override void Load()
         {
-            builder.Register<MsSqlNHibernateConfiguration>().As<NHibernateConfiguration>().SingletonScoped();
-            
-            builder.Register(x => x.Resolve<NHibernateConfiguration>()).As<IDataConfiguration>();
 
-            builder.Register<DeveloperActivityRepository>().As<IDeveloperActivityRepository>();
+            Bind<NHibernateConfiguration>()
+                .To<MsSqlNHibernateConfiguration>()
+                .InSingletonScope();
 
-            builder
-                .Register<NHibernateDeveloperActivityDataContext>()
-                .As<DeveloperActivityDataContextBase>()
-                .ContainerScoped();
-            
-            builder
-                .Register<DeveloperActivityDataContext>()
-                .ContainerScoped();
-            
-            builder
-                .Register(x => x.Resolve<NHibernateConfiguration>().CreateSessionFactory())
-                .As<ISessionFactory>()
-                .SingletonScoped();
-            builder
-                .Register(x => x.Resolve<ISessionFactory>().OpenSession())
-                .As<ISession>()
-                .ContainerScoped();
-            builder
-                .Register<Repository>()
-                .As<IRepository>()
-                .ContainerScoped();
+            Bind<IDataConfiguration>()
+                .To<MsSqlNHibernateConfiguration>()
+                .InSingletonScope();
+
+            Bind<ISessionFactory>()
+                .ToMethod(x => x.Kernel.Get<NHibernateConfiguration>().CreateSessionFactory())
+                .InSingletonScope();
+
+
+            Bind<DeveloperActivityDataContextBase>()
+                .To<NHibernateDeveloperActivityDataContext>()
+                .InRequestScope();
+
+            Bind<DeveloperActivityDataContextBase>()
+                .To<NHibernateDeveloperActivityDataContext>()
+                .InRequestScope();
+
+            Bind<ISession>()
+                .ToMethod(x => x.Kernel.Get<ISessionFactory>().OpenSession())
+                .InRequestScope();
+
+            Bind<IRepository>()
+                .To<Repository>()
+                .InRequestScope();
+
         }
     }
 }

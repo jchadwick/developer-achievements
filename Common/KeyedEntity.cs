@@ -1,5 +1,4 @@
 using System;
-using System.Data.Services.Common;
 using System.Runtime.Serialization;
 
 namespace DeveloperAchievements
@@ -9,7 +8,6 @@ namespace DeveloperAchievements
         [DataMember]
         public virtual long ID { get; set; }
 
-        private string _key;
         [DataMember]
         public virtual string Key
         {
@@ -21,8 +19,8 @@ namespace DeveloperAchievements
             }
             set { _key = value; }
         }
+        private string _key;
 
-        private DateTime? _createdTimeStamp;
         [DataMember]
         public virtual DateTime CreatedTimeStamp
         {
@@ -34,6 +32,7 @@ namespace DeveloperAchievements
             }
             set { _createdTimeStamp = value; }
         }
+        private DateTime? _createdTimeStamp;
 
 
         public override bool Equals(object obj)

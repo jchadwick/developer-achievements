@@ -11,16 +11,16 @@ namespace DeveloperAchievements.DataAccess.NHibernate
 {
     public class Repository : IRepository, IDisposable
     {
-        private readonly ISession _session;
         public ISession Session
         {
             get { return _session; }
         }
+        private readonly ISession _session;
 
 
-        public Repository(ISession Session)
+        public Repository(ISession session)
         {
-            _session = Session;
+            _session = session;
         }
 
 
@@ -82,12 +82,26 @@ namespace DeveloperAchievements.DataAccess.NHibernate
             }
         }
 
+        public void Save<T>(IEnumerable<T> targets) where T : KeyedEntity
+        {
+            if (targets == null)
+                throw new ArgumentNullException("targets");
+
+            using (var tx = Session.BeginTransaction())
+            {
+                foreach (var entity in targets.Where(x => x != null))
+                {
+                    InternalSave(entity);
+                }
+                tx.Commit();
+            }
+        }
+
         private void InternalSave<T>(T entity) where T : KeyedEntity
         {
             if (entity == null)
                 throw new ArgumentNullException("entity");
 
-            //entity.ValidateWithException();
             Session.SaveOrUpdate(entity);
         }
 

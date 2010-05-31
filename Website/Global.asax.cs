@@ -1,21 +1,30 @@
 ﻿using System;
-using Autofac.Integration.Web;
+using System.Web;
+using DeveloperAchievements.Util;
+using Ninject;
+using Ninject.Web;
 
 namespace DeveloperAchievements.Website
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : NinjectHttpApplication
     {
-        internal static IContainerProvider Container { get; private set; }
+        private static IKernel _kernel;
 
-        private static void InitializeInversionOfControlContainer()
+        internal static IKernel Container
         {
-            ContainerProviderFactory containerProviderFactory = new ContainerProviderFactory();
-            Container = containerProviderFactory.GetContainerProvider();
+            get { return _kernel; }
+        }
+
+        protected override IKernel CreateKernel()
+        {
+            if(_kernel == null)
+                _kernel = new KernelFactory().GetKernel(HttpContext.Current.Server.MapPath("~/Modules"));
+
+            return _kernel;
         }
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            InitializeInversionOfControlContainer();
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -29,7 +38,6 @@ namespace DeveloperAchievements.Website
 
         protected void Application_EndRequest(object sender, EventArgs e)
         {
-            Container.DisposeRequestContainer();
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

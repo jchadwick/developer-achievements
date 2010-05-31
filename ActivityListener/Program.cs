@@ -4,8 +4,6 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Autofac;
-using Autofac.Builder;
 using DeveloperAchievements.Achievements;
 using DeveloperAchievements.Activities;
 

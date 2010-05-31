@@ -1,26 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using DeveloperAchievements.Achievements;
-using DeveloperAchievements.Activities;
-using DeveloperAchievements.DataAccess.NHibernate;
+using System.Net;
 using ThoughtWorks.CruiseControl.Core;
 
 namespace DeveloperAchievements.CruiseControl
 {
     public class DeveloperAchievementsTask : ITask
     {
-        private readonly IDeveloperActivityRepository _activityRepository;
+        private readonly IBuildService _buildService;
 
-        public DeveloperAchievementsTask()
-            : this(new DeveloperActivityRepository(Repository.CreateForSingleUse()))
+        public DeveloperAchievementsTask(IBuildService buildService)
         {
-        }
-
-        public DeveloperAchievementsTask(IDeveloperActivityRepository activityRepository)
-        {
-            _activityRepository = activityRepository;
+            _buildService = buildService;
         }
 
         public void Run(IIntegrationResult result)
@@ -29,22 +23,17 @@ namespace DeveloperAchievements.CruiseControl
 
             if (shouldIgnoreBuild) return;
 
-            BuildResult resultStatus =
-                result.Fixed ? BuildResult.Fixed 
-                : (result.Succeeded ? BuildResult.Success : BuildResult.Failed);
+            string resultStatus =
+                result.Fixed ? "Fixed" 
+                : (result.Succeeded ? "Success" : "Failed");
 
-            IEnumerable<Build> buildEvents =
+            var buildEvents =
                 from username in (result.FailureUsers ?? new ArrayList()).Cast<string>()
-                select new Build()
-                            {
-                                CreatedTimeStamp = DateTime.Now,
-                                Key = username + result.ProjectName + DateTime.Now.ToString("G"),
-                                ReportUrl = result.ProjectUrl,
-                                Result = resultStatus,
-                                Username = username
-                       };
+                select new {username, result = resultStatus};
 
-            _activityRepository.Save(buildEvents);
+            foreach (var build in buildEvents)
+                _buildService.AddBuild(build.username, build.result);
         }
+
     }
 }

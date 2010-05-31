@@ -1,12 +1,17 @@
 @echo off
-RMDIR /S /Q project
-RMDIR /S /Q C:\Temp\repos
-RMDIR /S /Q C:\Temp\repos_temp
-MKDIR C:\Temp
+
+SET reposDir=C:\Temp\repos
+SET reposUri=file:///C:/Temp/repos
+
+RMDIR /S /Q project 2>NUL
+RMDIR /S /Q %reposDir% 2>NUL
+
+MKDIR %reposDir%
 MKDIR project
 ECHO "This is a test file" > project\test.txt
-..\References\svn\svnadmin create C:\Temp\repos
-..\References\svn\svn import project "file:///C:/Temp/repos/" -m "Creating test repository"
+..\References\svn\svnadmin create %reposDir%
+..\References\svn\svn import project "%reposUri%" -m "Creating test repository"
 RMDIR /S /Q project
-ECHO "Finished"
+
+ECHO Finished - created repository at %reposDir%
 PAUSE

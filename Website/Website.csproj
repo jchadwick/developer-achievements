@@ -32,14 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\References\autofac\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Integration.Web">
-      <HintPath>..\References\autofac\Autofac.Integration.Web.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL" />
+    <Reference Include="Ninject, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL" />
+    <Reference Include="Ninject.Extensions.Logging">
+      <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging.Log4net">
+      <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web">
+      <HintPath>..\References\ninject\web\Ninject.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Services" />
@@ -74,7 +77,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContainerProviderFactory.cs" />
     <Compile Include="DeveloperActivityService.svc.cs">
       <DependentUpon>DeveloperActivityService.svc</DependentUpon>
     </Compile>
@@ -87,10 +89,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccess.NHibernate\DataAccess.NHibernate.csproj">
-      <Project>{BBC006B1-09D8-4E3E-9D2F-737D799A10FA}</Project>
-      <Name>DataAccess.NHibernate</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

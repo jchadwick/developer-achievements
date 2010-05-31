@@ -6,8 +6,7 @@ using System.Runtime.Serialization;
 
 namespace DeveloperAchievements.Activities
 {
-    [DataContract]
-    [KnownType("GetKnownTypes")]
+    [DataContract, KnownType("GetKnownTypes")]
     public abstract class DeveloperActivity : KeyedEntity
     {
         private static readonly object KnownTypesLock = new object();
@@ -20,10 +19,12 @@ namespace DeveloperAchievements.Activities
         [IgnoreDataMember]
         public virtual bool Processed { get; set; }
 
+
         protected DeveloperActivity()
         {
             CreatedTimeStamp = DateTime.Now;
         }
+
 
         // ReSharper disable UnusedMember.Local
         private static IEnumerable<Type> GetKnownTypes()

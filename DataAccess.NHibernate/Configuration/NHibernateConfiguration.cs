@@ -1,7 +1,6 @@
-﻿using System.Reflection;
+﻿using DeveloperAchievements.Activities;
 using DeveloperAchievements.DataAccess.NHibernate.Mappings;
 using DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities;
-using FluentNHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions.Helpers;
@@ -28,6 +27,8 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Configuration
             new SchemaExport(Configuration.BuildConfiguration()).Create(true, true);
         }
 
+        public abstract void DropDatabase();
+
         public virtual ISessionFactory CreateSessionFactory()
         {
             return Configuration.BuildSessionFactory();
@@ -38,10 +39,7 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Configuration
             return Fluently.Configure()
                 .Database(GetConnectionInfo())
                 .Mappings(m => m.FluentMappings
-                                    .Add<DeveloperMapping>()
-                                    .Add<AchievementMapping>()
-                                    .Add<AchievementTypeMapping>()
-                                    .Add<CheckinMapping>()
+                                .AddFromAssemblyOf<DeveloperMapping>()
                                 .Conventions.Add(
                                     PrimaryKey.Name.Is(x => "ID"),
                                     ForeignKey.EndsWith("ID")

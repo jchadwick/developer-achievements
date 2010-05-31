@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Serialization;
-using DeveloperAchievements.Activities;
 
-namespace DeveloperAchievements.Achievements
+namespace DeveloperAchievements.Activities
 {
+    [DataContract]
     public class CheckIn : DeveloperActivity
     {
         [DataMember]

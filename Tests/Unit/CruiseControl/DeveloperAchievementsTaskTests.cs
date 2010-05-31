@@ -1,6 +1,4 @@
 using System.Collections;
-using DeveloperAchievements.Achievements;
-using DeveloperAchievements.Activities;
 using DeveloperAchievements.CruiseControl;
 using Moq;
 using NUnit.Framework;
@@ -13,13 +11,13 @@ namespace DeveloperAchievements.Unit.CruiseControl
     {
         private DeveloperAchievementsTask _task;
         private Mock<IIntegrationResult> _mockResult;
-        private Mock<IDeveloperActivityRepository> _mockRepository;
+        private Mock<IBuildService> _mockRepository;
 
         [SetUp]
         public void SetUp()
         {
             _mockResult = new Mock<IIntegrationResult>();
-            _mockRepository = new Mock<IDeveloperActivityRepository>();
+            _mockRepository = new Mock<IBuildService>();
             _task = new DeveloperAchievementsTask(_mockRepository.Object);
         }
 
@@ -33,7 +31,7 @@ namespace DeveloperAchievements.Unit.CruiseControl
             _task.Run(_mockResult.Object);
 
             _mockRepository
-                .Verify(x => x.Save(It.IsAny<Build>()));
+                .Verify(x => x.AddBuild("someuser", It.IsAny<string>()));
         }
     }
 }

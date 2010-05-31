@@ -126,15 +126,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Integration\CruiseControl\ODataBuildServiceTests.cs" />
     <Compile Include="Integration\DataAccess\NHibernate\Activities\BuildActivityTests.cs" />
     <Compile Include="Integration\DataAccess\NHibernate\RepositoryTestBase.cs" />
     <Compile Include="Integration\DataAccess\NHibernate\RepositoryTests.cs" />
     <Compile Include="Integration\Subversion\InterOp\SvnLookTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit\Common\Activities\PollingDeveloperActivityListenerTests.cs" />
-    <Compile Include="Unit\Common\Achievements\AchievementRepositoryTests.cs" />
-    <Compile Include="Unit\Common\Achievements\AchievementServiceTests.cs" />
-    <Compile Include="Unit\Common\DeveloperRepositoryTests.cs" />
     <Compile Include="Unit\CruiseControl\DeveloperAchievementsTaskTests.cs" />
     <Compile Include="Unit\Subversion\ConsoleTests.cs" />
     <Compile Include="Unit\Subversion\SubversionCheckInEventTests.cs" />
@@ -163,6 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Integration\Common\Activities\" />
+    <Folder Include="Unit\Common\Achievements\" />
+    <Folder Include="Unit\Common\Activities\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

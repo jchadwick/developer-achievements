@@ -23,18 +23,45 @@ namespace DeveloperAchievements.DataAccess
             get { return _baseContext.Queryable<AchievementDescriptor>(); }
         }
 
+        public IQueryable<Achievement> Awards
+        {
+            get { return _baseContext.Queryable<Achievement>(); }
+        }
+
         public IQueryable<Developer> Developers
+        {
+            get { return _baseContext.Queryable<Developer>(); }
+        }
+
+        public IQueryable<Build> Builds
+        {
+            get { return _baseContext.Queryable<Build>(); }
+        }
+
+        public IQueryable<BuildResult> BuildResults
         {
             get
             {
-                return _baseContext.Queryable<Developer>();
+
+                return new List<BuildResult>
+                           {
+                               BuildResult.Fixed,
+                               BuildResult.Success,
+                               BuildResult.Failed
+                           }.AsQueryable();
             }
+        }
+
+        public IQueryable<CheckIn> CheckIns
+        {
+            get { return _baseContext.Queryable<CheckIn>(); }
         }
 
         public IQueryable<DeveloperHistory> HistoryEntries
         {
             get { return _baseContext.Queryable<DeveloperHistory>(); }
         }
+
 
         #region Base Context proxy methods
 

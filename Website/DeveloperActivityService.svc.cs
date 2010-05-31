@@ -1,33 +1,24 @@
-﻿using System;
-using System.Data.Services;
+﻿using System.Data.Services;
 using System.ServiceModel;
 using DeveloperAchievements.DataAccess;
-using DeveloperAchievements.DataAccess.NHibernate;
+using Ninject;
 
 namespace DeveloperAchievements.Website
 {
-    public class DataServiceBase<T> : DataService<T>
-    {
-        public DataServiceBase()
-        {
-            Global.Container.RequestContainer.InjectProperties(this);
-        }
-    }
 
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-    public class DeveloperActivityService : DataServiceBase<DeveloperActivityDataContext>
+    public class DeveloperActivityService : DataService<DeveloperActivityDataContext>
     {
-        public DeveloperActivityDataContext Context { get; set; }
-
         protected override DeveloperActivityDataContext CreateDataSource()
         {
-            return Context;
+            return Global.Container.Get<DeveloperActivityDataContext>();
         }
 
         public static void InitializeService(DataServiceConfiguration config)
         {
             config.UseVerboseErrors = true;
-            config.SetEntitySetAccessRule("*", EntitySetRights.All);
+            config.SetEntitySetAccessRule("*", EntitySetRights.AllRead);
         }
     }
+
 }

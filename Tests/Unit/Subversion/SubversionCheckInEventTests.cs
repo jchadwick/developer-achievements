@@ -1,5 +1,4 @@
 using System;
-using DeveloperAchievements.Achievements;
 using DeveloperAchievements.Activities;
 using DeveloperAchievements.Subversion;
 using DeveloperAchievements.Subversion.InterOp;
@@ -25,10 +24,10 @@ namespace DeveloperAchievements.Unit.Subversion
                 .Callback((SvnRevisionParameters x) => actualParameters = x)
                 .Returns(() => new SvnLog(actualParameters.RepositoryPath, actualParameters.Identifier, DateTime.Now, "jchadwick", "This is a test checkin"));
 
-            var mockRepository = new Mock<IDeveloperActivityRepository>();
+            var mockRepository = new Mock<IRepository>();
             mockRepository
-                .Setup(x => x.Save(It.IsAny<DeveloperActivity>()))
-                .Callback((DeveloperActivity a) => actualActivity = a)
+                .Setup(x => x.Save(It.IsAny<CheckIn>()))
+                .Callback((CheckIn a) => actualActivity = a)
                 .Verifiable();
 
             var listener = new ServerSideCommitListener(mockRepository.Object, mockSvnLook.Object);

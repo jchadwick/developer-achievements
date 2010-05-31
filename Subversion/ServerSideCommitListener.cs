@@ -1,17 +1,16 @@
-﻿using DeveloperAchievements.Achievements;
-using DeveloperAchievements.Activities;
+﻿using DeveloperAchievements.Activities;
 using DeveloperAchievements.Subversion.InterOp;
 
 namespace DeveloperAchievements.Subversion
 {
     public class ServerSideCommitListener
     {
-        private readonly IDeveloperActivityRepository _activityRepository;
+        private readonly IRepository _repository;
         private readonly SvnLook _svnLooker;
 
-        public ServerSideCommitListener(IDeveloperActivityRepository activityRepository, SvnLook svnLooker)
+        public ServerSideCommitListener(IRepository repository, SvnLook svnLooker)
         {
-            _activityRepository = activityRepository;
+            _repository = repository;
             _svnLooker = svnLooker;
         }
 
@@ -27,7 +26,7 @@ namespace DeveloperAchievements.Subversion
                                   CreatedTimeStamp = info.Timestamp,
                                   Message = info.Message
                               };
-            _activityRepository.Save(checkIn);
+            _repository.Save(checkIn);
         }
 
     }

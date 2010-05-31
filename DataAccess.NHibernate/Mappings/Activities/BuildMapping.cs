@@ -1,5 +1,4 @@
-﻿using DeveloperAchievements.Achievements;
-using DeveloperAchievements.Activities;
+﻿using DeveloperAchievements.Activities;
 using FluentNHibernate.Mapping;
 
 namespace DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities

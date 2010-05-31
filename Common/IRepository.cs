@@ -17,5 +17,7 @@ namespace DeveloperAchievements
         IEnumerable<T> Query<T>(Expression<Func<T, bool>> where) where T : KeyedEntity;
 
         void Save<T>(T target) where T : KeyedEntity;
+
+        void Save<T>(IEnumerable<T> targets) where T : KeyedEntity;
     }
 }

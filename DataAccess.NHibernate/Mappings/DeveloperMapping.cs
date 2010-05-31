@@ -5,6 +5,7 @@
         public DeveloperMapping()
         {
             Map(x => x.Username);
+            Map(x => x.DisplayName);
         }
     }
 }

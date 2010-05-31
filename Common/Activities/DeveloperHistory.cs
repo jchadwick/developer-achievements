@@ -1,17 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Data.Services.Common;
+﻿using System.Runtime.Serialization;
 
 namespace DeveloperAchievements.Activities
 {
-    [DataServiceEntity]
+    [DataContract]
     public class DeveloperHistory : KeyedEntity
     {
+        [DataMember]
         public virtual Developer Developer { get; protected internal set; }
 
+        [DataMember]
         public virtual int TotalBuilds { get; protected internal set; }
 
+        [DataMember]
         public virtual int TotalCheckins { get; protected internal set; }
 
+        [DataMember]
         public virtual int TotalTaskActivities { get; protected internal set; }
 
 //        public virtual IEnumerable<DeveloperActivity> PreviousActivity { get; protected internal set; }
