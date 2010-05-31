@@ -28,9 +28,9 @@ namespace DeveloperAchievements.DataAccess
             get { return _baseContext.Queryable<Achievement>(); }
         }
 
-        public IQueryable<Developer> Developers
+        public IQueryable<User> Developers
         {
-            get { return _baseContext.Queryable<Developer>(); }
+            get { return _baseContext.Queryable<User>(); }
         }
 
         public IQueryable<Build> Builds

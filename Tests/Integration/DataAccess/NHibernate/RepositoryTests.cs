@@ -18,9 +18,9 @@ namespace DeveloperAchievements.Integration.DataAccess.NHibernate
 
             using(var repository = new Repository(SessionFactory.OpenSession()))
             {
-                var developer = repository.FindByKey<Developer>("jchadwick") ?? new Developer() { Username = "jchadwick" };
+                var developer = repository.FindByKey<User>("jchadwick") ?? new User() { Username = "jchadwick" };
                 var awardType = repository.FindByKey<AchievementDescriptor>("build+breaker") ?? new AchievementDescriptor() { Name = "Build Breaker" };
-                expectedAchievment = new Achievement() { Developer = developer, AwardedAchievement = awardType };
+                expectedAchievment = new Achievement() { User = developer, AwardedAchievement = awardType };
 
                 repository.Save(developer);
                 repository.Save(awardType);
@@ -47,8 +47,8 @@ namespace DeveloperAchievements.Integration.DataAccess.NHibernate
                 if(tempHistory != null)
                     repository.Delete(tempHistory);
 
-                var developer = repository.FindByKey<Developer>("jchadwick") ?? new Developer() { Username = "jchadwick" };
-                history = new DeveloperHistory() { Developer = developer };
+                var developer = repository.FindByKey<User>("jchadwick") ?? new User() { Username = "jchadwick" };
+                history = new DeveloperHistory() { User = developer };
 
                 repository.Save(developer);
                 repository.Save(history);

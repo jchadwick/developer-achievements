@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="Configuration\MsSqlNHibernateConfiguration.cs" />
     <Compile Include="DependencyModule.cs" />
-    <Compile Include="NHibernateDeveloperActivityDataContext.cs" />
     <Compile Include="Mappings\Activities\BuildMapping.cs" />
     <Compile Include="Mappings\Activities\CheckinMapping.cs" />
     <Compile Include="Mappings\Activities\DeveloperHistoryMapping.cs">
@@ -63,10 +62,10 @@
     </Compile>
     <Compile Include="Mappings\Activities\TaskActivityMapping.cs" />
     <Compile Include="Mappings\AchievementMapping.cs" />
-    <Compile Include="Mappings\AchievementTypeMapping.cs" />
+    <Compile Include="Mappings\AchievementDescriptorMapping.cs" />
     <Compile Include="Mappings\Activities\DeveloperActivityMapping.cs" />
     <Compile Include="Mappings\KeyedEntityMapping.cs" />
-    <Compile Include="Mappings\DeveloperMapping.cs" />
+    <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="Configuration\NHibernateConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />

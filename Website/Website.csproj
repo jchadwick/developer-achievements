@@ -33,12 +33,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\nhibernate\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL" />
     <Reference Include="Ninject.Extensions.Logging">
       <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Extensions.Logging.Log4net">
       <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Wcf">
+      <HintPath>..\References\ninject\wcf\Ninject.Extensions.Wcf.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Web">
       <HintPath>..\References\ninject\web\Ninject.Web.dll</HintPath>
@@ -66,7 +73,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DeveloperActivityService.svc" />
+    <Content Include="AchievementsService.svc" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -77,9 +84,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeveloperActivityService.svc.cs">
-      <DependentUpon>DeveloperActivityService.svc</DependentUpon>
-    </Compile>
+    <Compile Include="AchievementsService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -89,6 +94,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{7A54C1C8-EBFB-4E36-AFA1-D5410FF0CE00}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.NHibernate\DataAccess.NHibernate.csproj">
+      <Project>{BBC006B1-09D8-4E3E-9D2F-737D799A10FA}</Project>
+      <Name>DataAccess.NHibernate</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

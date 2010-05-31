@@ -6,7 +6,7 @@ namespace DeveloperAchievements.Activities
     public class DeveloperHistory : KeyedEntity
     {
         [DataMember]
-        public virtual Developer Developer { get; protected internal set; }
+        public virtual User User { get; protected internal set; }
 
         [DataMember]
         public virtual int TotalBuilds { get; protected internal set; }
@@ -21,7 +21,7 @@ namespace DeveloperAchievements.Activities
 
         protected override string CreateKey()
         {
-            return Developer.Key;
+            return User.Key;
         }
     }
 }

@@ -10,6 +10,8 @@ namespace DeveloperAchievements
 
         T Find<T>(long id) where T : KeyedEntity;
 
+        IEnumerable<T> FindAll<T>();
+
         T FindByKey<T>(string key) where T : KeyedEntity;
 
         T FindBy<T>(Expression<Func<T, bool>> where) where T : KeyedEntity;

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.Composition;
-using DeveloperAchievements.Activities;
 using DeveloperAchievements.DataAccess.NHibernate.Configuration;
 using NHibernate;
 using Ninject;
@@ -25,14 +24,6 @@ namespace DeveloperAchievements.DataAccess.NHibernate
                 .ToMethod(x => x.Kernel.Get<NHibernateConfiguration>().CreateSessionFactory())
                 .InSingletonScope();
 
-
-            Bind<DeveloperActivityDataContextBase>()
-                .To<NHibernateDeveloperActivityDataContext>()
-                .InRequestScope();
-
-            Bind<DeveloperActivityDataContextBase>()
-                .To<NHibernateDeveloperActivityDataContext>()
-                .InRequestScope();
 
             Bind<ISession>()
                 .ToMethod(x => x.Kernel.Get<ISessionFactory>().OpenSession())

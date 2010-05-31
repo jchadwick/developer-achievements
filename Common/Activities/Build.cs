@@ -1,4 +1,3 @@
-using System.Data.Services.Common;
 using System.Runtime.Serialization;
 
 namespace DeveloperAchievements.Activities
@@ -21,8 +20,10 @@ namespace DeveloperAchievements.Activities
     [DataContract]
     public class Build : DeveloperActivity
     {
+        [DataMember]
         public virtual string ReportUrl { get; set; }
 
+        [DataMember]
         public virtual BuildResult Result { get; set; }
     }
 

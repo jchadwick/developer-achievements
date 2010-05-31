@@ -21,17 +21,17 @@ namespace Setup
 
         private IEnumerable<KeyedEntity> CreateEntities()
         {
-            var jchadwick = new Developer() { Username = "jchadwick", DisplayName = "Jess Chadwick" };
+            var jchadwick = new User() { Username = "jchadwick", DisplayName = "Jess Chadwick" };
 
             yield return jchadwick;
-            yield return new Developer() { Username = "fsinatra", DisplayName = "Frank Sinatra" };
-            yield return new Developer() { Username = "jadama", DisplayName = "Admiral Adama" };
+            yield return new User() { Username = "fsinatra", DisplayName = "Frank Sinatra" };
+            yield return new User() { Username = "jadama", DisplayName = "Admiral Adama" };
 
             var bobTheBuilder = new AchievementDescriptor() { Key = "BobTheBuilder", Name = "Bob the Builder" };
             yield return bobTheBuilder;
             yield return new AchievementDescriptor() { Key = "FredTheFailure", Name = "Fred the Failure" };
 
-            yield return new Achievement() { AwardedAchievement = bobTheBuilder, Developer = jchadwick };
+            yield return new Achievement() { AwardedAchievement = bobTheBuilder, User = jchadwick };
         }
     }
 }

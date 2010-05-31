@@ -39,7 +39,7 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Configuration
             return Fluently.Configure()
                 .Database(GetConnectionInfo())
                 .Mappings(m => m.FluentMappings
-                                .AddFromAssemblyOf<DeveloperMapping>()
+                                .AddFromAssemblyOf<UserMapping>()
                                 .Conventions.Add(
                                     PrimaryKey.Name.Is(x => "ID"),
                                     ForeignKey.EndsWith("ID")

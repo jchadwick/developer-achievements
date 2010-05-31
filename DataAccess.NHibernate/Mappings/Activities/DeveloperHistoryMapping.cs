@@ -6,7 +6,7 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Mappings.Activities
     {
         public DeveloperHistoryMapping()
         {
-            HasOne(x => x.Developer);
+            HasOne(x => x.User);
 
             Map(x => x.TotalBuilds);
             Map(x => x.TotalCheckins);

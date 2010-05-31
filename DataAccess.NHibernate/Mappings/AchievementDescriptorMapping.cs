@@ -2,11 +2,12 @@
 
 namespace DeveloperAchievements.DataAccess.NHibernate.Mappings
 {
-    public class AchievementTypeMapping : KeyedEntityMapping<AchievementDescriptor>
+    public class AchievementDescriptorMapping : KeyedEntityMapping<AchievementDescriptor>
     {
-        public AchievementTypeMapping()
+        public AchievementDescriptorMapping()
         {
             Map(x => x.Name);
+            Map(x => x.Description);
         }
     }
 }

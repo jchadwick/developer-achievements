@@ -1,8 +1,8 @@
 ﻿namespace DeveloperAchievements.DataAccess.NHibernate.Mappings
 {
-    public class DeveloperMapping : KeyedEntityMapping<Developer>
+    public class UserMapping : KeyedEntityMapping<User>
     {
-        public DeveloperMapping()
+        public UserMapping()
         {
             Map(x => x.Username);
             Map(x => x.DisplayName);

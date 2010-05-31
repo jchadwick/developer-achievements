@@ -7,7 +7,7 @@ namespace DeveloperAchievements.Achievements
     {
 
         [DataMember]
-        public virtual Developer Developer { get; set; }
+        public virtual User User { get; set; }
 
         [DataMember]
         public virtual AchievementDescriptor AwardedAchievement { get; set; }

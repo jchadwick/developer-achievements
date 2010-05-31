@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 
 namespace DeveloperAchievements.Activities
 {
-    [DataContract, KnownType("GetKnownTypes")]
+    [DataContract(Name="Activity"), KnownType("GetKnownTypes")]
     public abstract class DeveloperActivity : KeyedEntity
     {
         private static readonly object KnownTypesLock = new object();

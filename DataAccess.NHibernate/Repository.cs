@@ -24,6 +24,11 @@ namespace DeveloperAchievements.DataAccess.NHibernate
         }
 
 
+        public IEnumerable<T> FindAll<T>()
+        {
+            return Session.Linq<T>().ToArray();
+        }
+
         public virtual T FindByKey<T>(string key) where T : KeyedEntity
         {
             var criteria = Session.CreateCriteria(typeof(T));

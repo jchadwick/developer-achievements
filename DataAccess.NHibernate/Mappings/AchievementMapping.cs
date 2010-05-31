@@ -6,7 +6,7 @@ namespace DeveloperAchievements.DataAccess.NHibernate.Mappings
     {
         public AchievementMapping()
         {
-            References(x => x.Developer, "DeveloperID");
+            References(x => x.User, "DeveloperID");
             References(x => x.AwardedAchievement, "AchievementTypeID");
         }
     }

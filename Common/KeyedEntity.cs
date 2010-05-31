@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace DeveloperAchievements
 {
+    [DataContract]
     public abstract class KeyedEntity
     {
         [DataMember]

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections;
 using System.Linq;
-using System.Net;
 using ThoughtWorks.CruiseControl.Core;
 
 namespace DeveloperAchievements.CruiseControl
