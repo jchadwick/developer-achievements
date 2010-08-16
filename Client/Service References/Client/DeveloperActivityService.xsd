@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42845/Services/DeveloperActivityService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Activity">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ActivityParameters" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activity" nillable="true" type="tns:Activity" />
+  <xs:complexType name="LogDeveloperActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityID" type="xs:long" />
+      <xs:element minOccurs="0" name="AwardedAchievementCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogDeveloperActivityResponse" nillable="true" type="tns:LogDeveloperActivityResponse" />
+</xs:schema>

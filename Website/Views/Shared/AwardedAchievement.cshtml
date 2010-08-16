@@ -1,0 +1,17 @@
+﻿@inherits System.Web.Mvc.WebViewPage<ChadwickSoftware.DeveloperAchievements.AwardedAchievement>
+    <fieldset>
+        <legend>Achievement Details</legend>
+        
+        <div class="display-label">Count</div>
+        <div class="display-field">@Model.Count</div>
+        
+        <div class="display-label">Developer</div>
+        <div class="display-field">@Model.Developer.DisplayName</div>
+        
+        <div class="display-label">LastAwardedTimestamp</div>
+        <div class="display-field">@String.Format("{0:g}", Model.LastAwardedTimestamp)</div>
+        
+        <div class="display-label">Key</div>
+        <div class="display-field">@Model.Key</div>
+        
+    </fieldset>

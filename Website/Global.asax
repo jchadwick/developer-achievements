@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="DeveloperAchievements.Website.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ChadwickSoftware.DeveloperAchievements.Website.MvcApplication" Language="C#" %>

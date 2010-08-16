@@ -1,63 +1,47 @@
-﻿using System;
-using System.Web;
-using DeveloperAchievements.Util;
+﻿using System.Web.Mvc;
+using System.Web.Routing;
+using ChadwickSoftware.DeveloperAchievements.DataAccess;
+using Microsoft.WebPages.Compilation;
 using Ninject;
-using Ninject.Web;
 
-namespace DeveloperAchievements.Website
+namespace ChadwickSoftware.DeveloperAchievements.Website
 {
-    public class Global : NinjectHttpApplication
-    {
-        private static IKernel _kernel;
+    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+    // visit http://go.microsoft.com/?LinkId=9394801
 
-        internal static IKernel Container
+    public class MvcApplication : Ninject.Web.Mvc.NinjectHttpApplication
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            get { return _kernel; }
+            filters.Add(new HandleErrorAttribute());
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                "Default", // Route name
+                "{action}/{key}", // URL with parameters
+                new { controller = "Achievements", action = "LeaderBoard", key = UrlParameter.Optional } // Parameter defaults
+            );
+
+        }
+
+        protected override void OnApplicationStarted()
+        {
+            AreaRegistration.RegisterAllAreas();
+
+            RegisterGlobalFilters(GlobalFilters.Filters);
+            RegisterRoutes(RouteTable.Routes);
+            CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements");
+            CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements.Website.Models");
         }
 
         protected override IKernel CreateKernel()
         {
-            if(_kernel == null)
-                _kernel = new KernelFactory().GetKernel(HttpContext.Current.Server.MapPath("~/Modules"));
-
-            return _kernel;
-        }
-
-        protected void Application_Start(object sender, EventArgs e)
-        {
-        }
-
-        protected void Session_Start(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_BeginRequest(object sender, EventArgs e)
-        {
-        }
-
-        protected void Application_EndRequest(object sender, EventArgs e)
-        {
-        }
-
-        protected void Application_AuthenticateRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_Error(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Session_End(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_End(object sender, EventArgs e)
-        {
-
+            IKernel kernel = new StandardKernel(new CoreBindingModule(), new DataAccessBindingModule());
+            return kernel;
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@View.Title</title>
+	<script type="text/javascript" src="@Url.Content("~/scripts/jquery-1.4.1.js")"></script>
+    <link href="@Url.Content("~/content/layout.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/style.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="header">
+		<div class="nav-bar">
+			<ul>
+				<li>@Html.ActionLink("Leaderboard", "leaderboard", "Achievements")</li>
+				<li>@Html.ActionLink("Achievements", "achievements", "Achievements")</li>
+				<li>@Html.ActionLink("Developers", "developers", "Achievements")</li>
+			</ul>
+		</div>
+	</div>
+
+    <div class="main-content">
+    @RenderBody()
+    </div>
+
+	<div class="footer">
+	</div>
+</body>
+</html>
