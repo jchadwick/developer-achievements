@@ -1,0 +1,4 @@
+﻿<%@ ServiceHost Language="C#"
+    CodeBehind="DeveloperActivityService.svc.cs"
+    Service="ChadwickSoftware.DeveloperAchievements.Website.Services.DeveloperActivityService"
+%>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42845/Services/DeveloperActivityService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts" />
+  <xs:element name="LogDeveloperActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts" minOccurs="0" name="activityContract" nillable="true" type="q1:Activity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogDeveloperActivityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts" minOccurs="0" name="LogDeveloperActivityResult" nillable="true" type="q2:LogDeveloperActivityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

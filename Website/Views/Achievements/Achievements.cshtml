@@ -1,0 +1,59 @@
+﻿@inherits System.Web.Mvc.WebViewPage<IEnumerable<ChadwickSoftware.DeveloperAchievements.Achievement>>
+
+@{
+    View.Title = "Achievements";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Achievements</h2>
+
+    <table>
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                TargetActivityTypeName
+            </th>
+            <th>
+                TriggerCount
+            </th>
+            <th>
+                Developers Awarded
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+    
+        <tr>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.TargetActivityTypeName
+            </td>
+            <td>
+                @item.TriggerCount
+            </td>
+            <td>
+                @foreach(var awardedAchievement in item.AwardedAchievements) {
+				<span>@awardedAchievement.Developer.DisplayName</span>
+				}
+            </td>
+        </tr>
+    
+    }
+
+    </table>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+

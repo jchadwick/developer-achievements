@@ -1,0 +1,61 @@
+﻿@inherits System.Web.Mvc.WebViewPage<LeaderBoardStatistics>
+
+@{
+    View.Title = "Leader Board";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Leader Board</h2>
+
+
+	<h3>Rock Stars</h3>
+	<ul class="leaderboard-rankings">
+@foreach(var rockStar in ViewData.Model.RockStars) {
+		<li>
+			<span class="rank">@rockStar.Statistics.Rank</span>
+			<span class="name">@rockStar.DisplayName</span>
+			(@rockStar.Statistics.Percentage.ToString("#0%"):
+				Positive: @rockStar.Statistics.PositiveAchievementsCount 
+				Negative: @rockStar.Statistics.NegativeAchievementsCount)
+		</li>
+}
+	</ul>
+
+
+	<h3>n00bs</h3>
+	<ul class="leaderboard-rankings">
+@foreach(var n00b in ViewData.Model.n00bs) {
+		<li>
+			<span class="rank">@n00b.Statistics.Rank</span>
+			<span class="name">@n00b.DisplayName</span>
+			(@n00b.Statistics.Percentage.ToString("#0%"):
+				Positive: @n00b.Statistics.PositiveAchievementsCount 
+				Negative: @n00b.Statistics.NegativeAchievementsCount)
+		</li>
+}
+	</ul>
+
+
+
+@foreach(var achievementGroup in ViewData.Model.AchievementGroups) {
+
+	<h3>Top @achievementGroup.Name Achievers</h3>
+	<ul class="leaderboard-rankings">
+		@foreach(var achiever in achievementGroup.TopAwards) {
+		<li>@achiever.Developer.DisplayName (Count: @achiever.Count)</li>
+		}
+	</ul>
+
+}
+
+
+@foreach(var activityGroup in ViewData.Model.ActivityGroups) {
+
+	<h3>Top @activityGroup.Name Performers</h3>
+	<ul class="leaderboard-rankings">
+		@foreach(var activityCount in activityGroup.ActivityCounts) {
+		<li>@activityCount.Key.DisplayName (Count: @activityCount.Value)</li>
+		}
+	</ul>
+
+}

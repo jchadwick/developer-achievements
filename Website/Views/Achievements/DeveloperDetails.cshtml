@@ -1,0 +1,30 @@
+﻿@inherits System.Web.Mvc.WebViewPage<ChadwickSoftware.DeveloperAchievements.Developer>
+
+@{
+    View.Title = "Details";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>Fields</legend>
+        
+        <div class="display-label">DisplayName</div>
+        <div class="display-field">@Model.DisplayName</div>
+        
+        <div class="display-label">Username</div>
+        <div class="display-field">@Model.Username</div>
+        
+        <div class="display-label">ID</div>
+        <div class="display-field">@Model.ID</div>
+        
+        <div class="display-label">Key</div>
+        <div class="display-field">@Model.Key</div>
+        
+    </fieldset>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

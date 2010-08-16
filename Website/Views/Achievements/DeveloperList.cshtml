@@ -1,0 +1,20 @@
+﻿@inherits System.Web.Mvc.WebViewPage<IEnumerable<ChadwickSoftware.DeveloperAchievements.Developer>>
+
+@{
+    View.Title = "Developers";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Developers</h2>
+
+	<ul class="developer-list">
+
+	@foreach(var developer in ViewData.Model) {
+		<li class="floating-card">
+			<span class="rank">@developer.Statistics.Rank</span>
+			<span class="name">@Html.ActionLink(developer.DisplayName, "Developers", "Achievements", new { key = developer.Key }, new {})</span>
+			<span class="percentage">@developer.Statistics.Percentage.ToString("#0%")</span>
+		</li>
+	}
+
+	</ul>
