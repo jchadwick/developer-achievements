@@ -1,4 +1,0 @@
-﻿<%@ ServiceHost Language="C#" 
-	Service="DeveloperAchievements.Website.AchievementsService" 
-	Factory="System.ServiceModel.Activation.WebServiceHostFactory"
-%>
