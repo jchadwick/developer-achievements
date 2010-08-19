@@ -1,8 +1,10 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 using System.Web.Routing;
 using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using Microsoft.WebPages.Compilation;
 using Ninject;
+using Ninject.Web.Mvc;
 
 namespace ChadwickSoftware.DeveloperAchievements.Website
 {
@@ -11,6 +13,8 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
 
     public class MvcApplication : Ninject.Web.NinjectHttpApplication
     {
+        private NinjectControllerFactory _controllerFactory;
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -36,11 +40,19 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
             RegisterRoutes(RouteTable.Routes);
             CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements");
             CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements.Website.Models");
+
+            ControllerBuilder.Current.SetControllerFactory(_controllerFactory);
         }
 
         protected override IKernel CreateKernel()
         {
             IKernel kernel = new StandardKernel(new CoreBindingModule(), new DataAccessBindingModule());
+            
+            kernel.Bind<HttpContext>().ToMethod(ctx => HttpContext.Current).InTransientScope();
+            kernel.Bind<HttpContextBase>().ToMethod(ctx => new HttpContextWrapper(HttpContext.Current)).InTransientScope();
+
+            _controllerFactory = new NinjectControllerFactory(kernel);
+
             return kernel;
         }
     }
