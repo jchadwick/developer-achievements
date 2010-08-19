@@ -5,6 +5,10 @@
         public virtual string Url { get; set; }
     }
 
+    public class FixedBuild : Build
+    {
+    }
+
     public class BrokenBuild : Build
     {
     }

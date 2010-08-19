@@ -10,13 +10,13 @@ namespace ChadwickSoftware.DeveloperAchievements.Client
     [TestFixture]
     public class DeveloperActivityServiceClientTests : IntegrationTestFixture
     {
-        private DeveloperActivityServiceClient _client;
+        private DeveloperActivityService _client;
 
         [SetUp]
         public override void SetUp()
         {
             base.SetUp();
-            _client = new DeveloperActivityServiceClient();
+            _client = new DeveloperActivityService();
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client
             Assert.That(checkinActivity.Revision, Is.EqualTo(activity.ActivityParameters["Revision"]));
         }
 
-        [Test, Explicit]
+        [Test, Explicit("Manual test harness")]
         public void LogSuccessfulBuild()
         {
             ClientActivity activity = new ClientActivity()

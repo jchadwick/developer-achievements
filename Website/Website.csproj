@@ -79,7 +79,7 @@
     <Compile Include="Ninject\NinjectControllerFactory.cs" />
     <Compile Include="Ninject\NinjectHttpApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Contracts\ActivityContract.svc.cs" />
+    <Compile Include="Services\Contracts\ActivityContract.cs" />
     <Compile Include="Services\DeveloperActivityService.svc.cs">
       <DependentUpon>DeveloperActivityService.svc</DependentUpon>
       <SubType>Component</SubType>

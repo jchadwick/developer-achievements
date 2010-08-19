@@ -30,6 +30,11 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Services
         public IAchievementGenerator AchievementGenerator { get; set; }
 
 
+        public DeveloperActivityService()
+        {
+            
+        }
+
         [WebGet]
         public LogDeveloperActivityResponse LogDeveloperActivity(string username, string activityType, DateTime timestamp)
         {
