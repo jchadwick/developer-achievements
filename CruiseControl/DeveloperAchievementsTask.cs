@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ChadwickSoftware.DeveloperAchievements.Client;
 using ThoughtWorks.CruiseControl.Core;
+using ThoughtWorks.CruiseControl.Remote;
 
 namespace DeveloperAchievements.CruiseControl
 {
@@ -23,9 +23,14 @@ namespace DeveloperAchievements.CruiseControl
 
         public void Run(IIntegrationResult result)
         {
-            bool shouldIgnoreBuild = result.HasSourceControlError;
+            bool shouldIgnoreBuild = 
+                   result.BuildCondition == BuildCondition.ForceBuild 
+                || result.Status == IntegrationStatus.Cancelled 
+                || result.Status == IntegrationStatus.Unknown;
 
             if (shouldIgnoreBuild) return;
+
+            IEnumerable<string> usernames = result.Modifications.Select(m => m.UserName).Distinct();
 
             string activityTypeName = GetActivityTypeName(result);
 
@@ -36,7 +41,7 @@ namespace DeveloperAchievements.CruiseControl
                     };
 
             IEnumerable<Activity> activities =
-                from username in (result.FailureUsers ?? new ArrayList()).Cast<string>()
+                from username in (usernames ?? Enumerable.Empty<string>())
                 select new Activity()
                            {
                                ActivityType = activityTypeName,

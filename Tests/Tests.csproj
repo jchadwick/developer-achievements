@@ -77,10 +77,15 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="ThoughtWorks.CruiseControl.Core">
+      <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AchievementCalculators\DefaultAchievementCalculatorTests.cs" />
     <Compile Include="Client\DeveloperActivityServiceClientTests.cs" />
+    <Compile Include="CruiseControl\DeveloperAchievementsTaskIntegrationTests.cs" />
+    <Compile Include="CruiseControl\DeveloperAchievementsTaskTests.cs" />
     <Compile Include="IntegrationTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MockRepository.cs" />
@@ -98,14 +103,16 @@
       <Project>{31294D0B-4FB0-41DF-A18E-8BBDB65225CE}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CruiseControl\CruiseControl.csproj">
+      <Project>{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}</Project>
+      <Name>CruiseControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{73A0EED5-8925-498C-926A-1AF2F140D223}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CruiseControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

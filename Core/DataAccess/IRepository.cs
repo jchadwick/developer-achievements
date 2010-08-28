@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ChadwickSoftware.DeveloperAchievements
+namespace ChadwickSoftware.DeveloperAchievements.DataAccess
 {
     public interface IRepository
     {
@@ -18,5 +18,7 @@ namespace ChadwickSoftware.DeveloperAchievements
         void SaveAll<T>(IEnumerable<T> instances) where T : IEntity;
         
         void ExecuteSql(string sqlQuery);
+        
+        void Clear();
     }
 }

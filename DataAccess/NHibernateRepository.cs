@@ -71,6 +71,11 @@ namespace ChadwickSoftware.DeveloperAchievements.DataAccess
             Session.CreateSQLQuery(sqlQuery).ExecuteUpdate();
         }
 
+        public void Clear()
+        {
+            Session.Clear();
+        }
+
         public virtual void Save<T>(T entity) where T : IEntity
         {
             using (var tx = Session.BeginTransaction())

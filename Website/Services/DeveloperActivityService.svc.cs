@@ -6,6 +6,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Web.Compilation;
 using ChadwickSoftware.DeveloperAchievements.AchievementGeneration;
+using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts;
 using Ninject;
 using Ninject.Web;

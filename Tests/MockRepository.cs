@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using ChadwickSoftware.DeveloperAchievements.DataAccess;
 
 namespace ChadwickSoftware.DeveloperAchievements
 {
@@ -52,6 +53,11 @@ namespace ChadwickSoftware.DeveloperAchievements
         }
 
         public void ExecuteSql(string sqlQuery)
+        {
+            
+        }
+
+        public void Clear()
         {
             
         }

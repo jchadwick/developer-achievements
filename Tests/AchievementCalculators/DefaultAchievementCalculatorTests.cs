@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ChadwickSoftware.DeveloperAchievements.AchievementGeneration;
+using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
 using ChadwickSoftware.DeveloperAchievements.Activities;

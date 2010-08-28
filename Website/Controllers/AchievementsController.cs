@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using ChadwickSoftware.DeveloperAchievements.Website.Models;
 
 namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers

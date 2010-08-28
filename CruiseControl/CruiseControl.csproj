@@ -45,6 +45,7 @@
     <Reference Include="ThoughtWorks.CruiseControl.Core">
       <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
     </Reference>
+    <Reference Include="ThoughtWorks.CruiseControl.Remote, Version=1.5.7256.1, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeveloperAchievementsTask.cs" />
