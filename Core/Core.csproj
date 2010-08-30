@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Achievement.cs" />
     <Compile Include="AchievementGeneration\AchievementGenerator.cs" />
+    <Compile Include="AchievementGeneration\Statistics\StatisticsGenerator.cs" />
     <Compile Include="AchievementKind.cs" />
     <Compile Include="Activities\Build.cs" />
     <Compile Include="Activities\CheckIn.cs" />
@@ -74,9 +75,7 @@
     <Compile Include="DataAccess\IRepository.cs" />
     <Compile Include="DeveloperStatistic.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AchievementGeneration\Statistics\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

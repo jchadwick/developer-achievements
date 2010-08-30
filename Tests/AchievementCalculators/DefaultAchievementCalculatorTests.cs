@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ChadwickSoftware.DeveloperAchievements.AchievementGeneration;
+using ChadwickSoftware.DeveloperAchievements.AchievementGeneration.Calculators;
 using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
@@ -32,7 +33,7 @@ namespace ChadwickSoftware.DeveloperAchievements.AchievementCalculators
         {
             _repository.Save(new Achievement() { TriggerCount = 1, TargetActivityTypeName = typeof(BrokenBuild).FullName });
 
-            AchievementGenerator generator = new AchievementGenerator(_repository, _calculators);
+            AchievementGenerator generator = new AchievementGenerator(_calculators);
 
             Activity activity = new BrokenBuild() { Developer = _developer };
             _developer.History.Add(activity);
@@ -50,7 +51,7 @@ namespace ChadwickSoftware.DeveloperAchievements.AchievementCalculators
 
             _repository.Save(new Achievement() { TriggerCount = triggerCount, TargetActivityTypeName = typeof(BrokenBuild).FullName });
 
-            AchievementGenerator generator = new AchievementGenerator(_repository, _calculators);
+            AchievementGenerator generator = new AchievementGenerator(_calculators);
 
             // Add enough history so that the next one will trigger the accumulator
             for (int i = 0; i < triggerCount - 1; i++)
@@ -74,7 +75,7 @@ namespace ChadwickSoftware.DeveloperAchievements.AchievementCalculators
 
             _repository.Save(new Achievement() { TriggerCount = triggerCount, TargetActivityTypeName = typeof(BrokenBuild).FullName });
 
-            AchievementGenerator generator = new AchievementGenerator(_repository, _calculators);
+            AchievementGenerator generator = new AchievementGenerator(_calculators);
 
             // No developer history - the next Activity will be the first
             _developer.History.Clear();

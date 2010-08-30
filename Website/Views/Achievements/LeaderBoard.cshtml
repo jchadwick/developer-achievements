@@ -4,54 +4,63 @@
     LayoutPage = "~/Views/Shared/_Layout.cshtml";
 }
 
-	<h3>Rock Stars</h3>
-	<ul class="leaderboard-rankings">
-    @foreach(var rockStar in ViewData.Model.RockStars) {
-		<li>
-			<span class="rank">@rockStar.Statistics.Rank</span>
-			<span class="name">@rockStar.DisplayName</span>
-			(@rockStar.Statistics.Percentage.ToString("#0%"):
-				Positive: @rockStar.Statistics.PositiveAchievementsCount 
-				Negative: @rockStar.Statistics.NegativeAchievementsCount)
-		</li>
-    }
-	</ul>
+    <div class="panel">
+    	<h2 class="header">Rock Stars</h2>
+	    <ul class="body leaderboard-rankings">
+        @foreach(var developer in ViewData.Model.RockStars) {
+		    <li class="leaderboard-ranking">
+			    <span class="rank">@developer.Statistics.Rank</span>
+			    <span class="name">@developer.DisplayName</span>
+                <span class="statistics">
+				    <span class="positive">@developer.Statistics.PositiveAchievementsCount </span>
+				    <span class="negative">@developer.Statistics.NegativeAchievementsCount</span>
+			        <span class="percentage">@developer.Statistics.Percentage.ToString("#0%")</span>
+                </span>
+		    </li>
+        }
+	    </ul>
+    </div>
+
+    <div class="panel">
+	    <h2 class="header">n00bs</h2>
+	    <ul class="body leaderboard-rankings">
+        @foreach(var developer in ViewData.Model.n00bs) {
+		    <li class="leaderboard-ranking">
+			    <span class="rank">@developer.Statistics.Rank</span>
+			    <span class="name">@developer.DisplayName</span>
+                <span class="statistics">
+				    <span class="positive">@developer.Statistics.PositiveAchievementsCount </span>
+				    <span class="negative">@developer.Statistics.NegativeAchievementsCount</span>
+			        <span class="percentage">@developer.Statistics.Percentage.ToString("#0%")</span>
+                </span>
+		    </li>
+        }
+	    </ul>
+    </div>
 
 
-	<h3>n00bs</h3>
-	<ul class="leaderboard-rankings">
-    @foreach(var n00b in ViewData.Model.n00bs) {
-		<li>
-			<span class="rank">@n00b.Statistics.Rank</span>
-			<span class="name">@n00b.DisplayName</span>
-			(@n00b.Statistics.Percentage.ToString("#0%"):
-				Positive: @n00b.Statistics.PositiveAchievementsCount 
-				Negative: @n00b.Statistics.NegativeAchievementsCount)
-		</li>
-    }
-	</ul>
-
+    <hr />
 
 
 @foreach(var achievementGroup in ViewData.Model.AchievementGroups) {
-
-	<h3>Top @achievementGroup.Name Achievers</h3>
-	<ul class="leaderboard-rankings">
-		@foreach(var achiever in achievementGroup.TopAwards) {
-		<li>@achiever.Developer.DisplayName (Count: @achiever.Count)</li>
-		}
-	</ul>
-
+    <div class="panel">
+	    <h2 class="header">Top @achievementGroup.Name Achievers</h2>
+	    <ul class="body leaderboard-rankings">
+		    @foreach(var achiever in achievementGroup.TopAwards) {
+		    <li class="leaderboard-ranking">@achiever.Developer.DisplayName (Count: @achiever.Count)</li>
+		    }
+	    </ul>
+    </div>
 }
 
 
 @foreach(var activityGroup in ViewData.Model.ActivityGroups) {
-
-	<h3>Top @activityGroup.Name Performers</h3>
-	<ul class="leaderboard-rankings">
-		@foreach(var activityCount in activityGroup.ActivityCounts) {
-		<li>@activityCount.Key.DisplayName (Count: @activityCount.Value)</li>
-		}
-	</ul>
-
+    <div class="panel">
+	    <h2 class="header">Top @activityGroup.Name Performers</h2>
+	    <ul class="body leaderboard-rankings">
+		    @foreach(var activityCount in activityGroup.ActivityCounts) {
+		    <li class="leaderboard-ranking">@activityCount.Key.DisplayName (Count: @activityCount.Value)</li>
+		    }
+	    </ul>
+    </div>
 }

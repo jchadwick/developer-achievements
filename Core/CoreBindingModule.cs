@@ -1,5 +1,6 @@
-﻿using ChadwickSoftware.DeveloperAchievements.AchievementCalculators;
-using ChadwickSoftware.DeveloperAchievements.AchievementGeneration;
+﻿using ChadwickSoftware.DeveloperAchievements.AchievementGeneration;
+using ChadwickSoftware.DeveloperAchievements.AchievementGeneration.Calculators;
+using ChadwickSoftware.DeveloperAchievements.AchievementGeneration.Statistics;
 using Ninject.Modules;
 
 namespace ChadwickSoftware.DeveloperAchievements
@@ -10,6 +11,7 @@ namespace ChadwickSoftware.DeveloperAchievements
         {
             Bind<IAchievementGenerator>().To<AchievementGenerator>();
             Bind<IAchievementCalculator>().To<DefaultAchievementCalculator>();
+            Bind<IStatisticsGenerator>().To<StatisticsGenerator>();
         }
     }
 }

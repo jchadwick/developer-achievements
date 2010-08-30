@@ -66,6 +66,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\ninject\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject.Extensions.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging.Log4net">
+      <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.Log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web">
+      <HintPath>..\References\ninject\web\Ninject.Web.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\References\nunit\nunit.framework.dll</HintPath>
     </Reference>
@@ -77,6 +87,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="ThoughtWorks.CruiseControl.Core">
       <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
     </Reference>
@@ -84,12 +95,13 @@
   <ItemGroup>
     <Compile Include="AchievementCalculators\DefaultAchievementCalculatorTests.cs" />
     <Compile Include="Client\DeveloperActivityServiceClientTests.cs" />
-    <Compile Include="CruiseControl\DeveloperAchievementsTaskIntegrationTests.cs" />
-    <Compile Include="CruiseControl\DeveloperAchievementsTaskTests.cs" />
+    <Compile Include="CruiseControl\DeveloperBuildActivityTaskIntegrationTests.cs" />
+    <Compile Include="CruiseControl\DeveloperBuildActivityTaskTests.cs" />
     <Compile Include="IntegrationTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MockRepository.cs" />
     <Compile Include="DataAccess\NHibernateRepositoryTests.cs" />
+    <Compile Include="Website\Services\DeveloperActivityServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -110,6 +122,10 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{73A0EED5-8925-498C-926A-1AF2F140D223}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Website\Website.csproj">
+      <Project>{60C69D34-6AAC-48BE-94FE-40A2EE027E10}</Project>
+      <Name>Website</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

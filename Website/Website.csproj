@@ -82,14 +82,19 @@
     <Compile Include="Services\Contracts\ActivityContract.cs" />
     <Compile Include="Services\DeveloperActivityService.svc.cs">
       <DependentUpon>DeveloperActivityService.svc</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\Contracts\LogDeveloperActivityResponse.svc.cs" />
+    <Compile Include="Services\WebServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\layout.css" />
+    <Content Include="Content\images\person.png" />
+    <Content Include="Content\themes\default.css" />
+    <Content Include="Content\themes\XBL\images\main_bg.jpg" />
+    <Content Include="Content\themes\XBL\images\main_bg_repeat.jpg" />
+    <Content Include="Content\themes\XBL\theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\style.css" />
     <Content Include="Services\DeveloperActivityService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

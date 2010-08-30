@@ -15,6 +15,8 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
     {
         private NinjectControllerFactory _controllerFactory;
 
+        internal static IKernel Kernel { get; private set; }
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -34,26 +36,27 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
 
         protected override void OnApplicationStarted()
         {
+            CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements");
+            CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements.Website.Models");
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-            CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements");
-            CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements.Website.Models");
 
             ControllerBuilder.Current.SetControllerFactory(_controllerFactory);
         }
 
         protected override IKernel CreateKernel()
         {
-            IKernel kernel = new StandardKernel(new CoreBindingModule(), new DataAccessBindingModule());
+            Kernel = new StandardKernel(new CoreBindingModule(), new DataAccessBindingModule());
             
-            kernel.Bind<HttpContext>().ToMethod(ctx => HttpContext.Current).InTransientScope();
-            kernel.Bind<HttpContextBase>().ToMethod(ctx => new HttpContextWrapper(HttpContext.Current)).InTransientScope();
+            Kernel.Bind<HttpContext>().ToMethod(ctx => HttpContext.Current).InTransientScope();
+            Kernel.Bind<HttpContextBase>().ToMethod(ctx => new HttpContextWrapper(HttpContext.Current)).InTransientScope();
 
-            _controllerFactory = new NinjectControllerFactory(kernel);
+            _controllerFactory = new NinjectControllerFactory(Kernel);
 
-            return kernel;
+            return Kernel;
         }
     }
 }

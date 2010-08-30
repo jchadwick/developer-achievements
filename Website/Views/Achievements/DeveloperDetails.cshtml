@@ -1,24 +1,28 @@
 ﻿@inherits System.Web.Mvc.WebViewPage<ChadwickSoftware.DeveloperAchievements.Developer>
 
 @{
-    View.Title = "Developer: " + Model.DisplayName;
+    View.Title = Model.DisplayName + "'s Achievements";
     LayoutPage = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h2>Details</h2>
-
-    <fieldset>
-        <legend>Fields</legend>
-        
-        <div class="display-label">DisplayName</div>
-        <div class="display-field">@Model.DisplayName</div>
-        
-        <div class="display-label">Username</div>
-        <div class="display-field">@Model.Username</div>
-        
-    </fieldset>
-
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id=Model.Key }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <div class="three-column">
+    
+        <div class="panel">
+            <h2 class="header">Positive</h2>
+            <ul class="body">
+            </ul>
+        </div>
+    
+        <div class="panel">
+            <h2 class="header">Negative</h2>
+            <ul class="body">
+            </ul>
+        </div>
+    
+        <div class="panel">
+            <h2 class="header">Medals</h2>
+            <ul class="body">
+            </ul>
+        </div>
+    
+    </div>

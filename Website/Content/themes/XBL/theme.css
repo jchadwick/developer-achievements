@@ -1,0 +1,112 @@
+﻿@import url('../default.css');
+
+/*  Global styles */
+body 
+{
+	background: #565D62 url('images/main_bg_repeat.jpg') center top repeat-y;
+	margin-top: -6px;
+}
+
+body, a
+{
+	color: #fff;
+	font-weight: bold;
+}
+
+#body-container
+{
+	background: #565D62 url('images/main_bg.jpg') center top no-repeat;
+	min-height: 590px;
+	padding: 0 20px;
+}
+
+#header
+{
+	height:200px;
+	padding-top:6px;
+}
+	#header h1
+	{
+		margin: 60px 50px;
+		font-size: 300%;
+	}
+
+#nav-bar
+{
+	width: 100%;
+	text-align: center;
+}
+	#nav-bar ul
+	{
+		padding: 0;
+	}
+	#nav-bar li
+	{
+		margin: 0 40px;
+		display: inline;
+	}
+	#nav-bar a
+	{
+		text-decoration: none;
+	}
+
+
+#main-content
+{
+	min-height: 600px;
+	padding: 10px;
+}
+
+.panel
+{
+	float: left;
+	margin: 0 1% 40px;
+	width: 48%;
+}
+	.panel .header
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.panel .body
+	{
+		color: #666;
+		background: #E7E7E7;
+		padding: 10px;
+		min-height: 200px;
+		border: groove;
+	}
+	.three-column .panel
+	{
+		width: 30%;
+	}
+	
+#footer
+{
+	text-align: center;
+	padding: 15px;
+}
+
+/****** END GLOBAL STYLES **********/
+
+/* Leaderboard */
+
+.leaderboard-ranking .statistics
+{
+	float: right;
+}
+	.leaderboard-ranking .statistics span
+	{
+		width: 40px;
+		float: left;
+		text-align: center;
+	}
+	.leaderboard-ranking .statistics .positive
+	{
+		color: green;
+	}	
+	.leaderboard-ranking .statistics .negative
+	{
+		color: red;
+	}	
+	

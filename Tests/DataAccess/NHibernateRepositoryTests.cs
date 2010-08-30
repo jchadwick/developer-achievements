@@ -143,7 +143,7 @@ namespace ChadwickSoftware.DeveloperAchievements.DataAccess
                 .Setup(x => x.Calculate(It.IsAny<Activity>()))
                 .Returns(_repository.Query<AwardedAchievement>());
 
-            AchievementGenerator generator = new AchievementGenerator(_repository, new[] { mockCalculator.Object });
+            AchievementGenerator generator = new AchievementGenerator(new[] { mockCalculator.Object });
             generator.GenerateAchievements(new SuccessfulBuild() {Developer = _developer});
         }
 

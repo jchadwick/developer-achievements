@@ -48,7 +48,7 @@
     <Reference Include="ThoughtWorks.CruiseControl.Remote, Version=1.5.7256.1, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeveloperAchievementsTask.cs" />
+    <Compile Include="DeveloperBuildActivityTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

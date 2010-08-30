@@ -12,7 +12,11 @@ namespace ChadwickSoftware.DeveloperAchievements
         [SetUp]
         public virtual void SetUp()
         {
-            IKernel kernel = new StandardKernel(new CoreBindingModule(), new DataAccessBindingModule());
+            NinjectSettings settings = new NinjectSettings()
+                                           {
+                                               InjectNonPublic = true
+                                           };
+            IKernel kernel = new StandardKernel(settings, new CoreBindingModule(), new DataAccessBindingModule());
             kernel.Inject(this);
         }
     }

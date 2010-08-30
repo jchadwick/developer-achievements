@@ -21,6 +21,10 @@ namespace ChadwickSoftware.DeveloperAchievements
 
         public virtual string Username { get; set; }
 
+        public virtual string HeadshotUrl { get; set; }
+
+        public virtual string HeadshotThumbnailUrl { get; set; }
+
 
         public Developer()
         {

@@ -26,5 +26,10 @@ namespace ChadwickSoftware.DeveloperAchievements
         {
             return CompareTo(obj as Activity);
         }
+
+        public override string ToString()
+        {
+            return GetType().Name;
+        }
     }
 }

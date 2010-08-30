@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Web.Compilation;
 using ChadwickSoftware.DeveloperAchievements.AchievementGeneration;
+using ChadwickSoftware.DeveloperAchievements.AchievementGeneration.Statistics;
 using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts;
 using Ninject;
@@ -30,11 +32,9 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Services
         [Inject]
         public IAchievementGenerator AchievementGenerator { get; set; }
 
+        [Inject]
+        public IStatisticsGenerator StatisticsGenerator { get; set; }
 
-        public DeveloperActivityService()
-        {
-            
-        }
 
         [WebGet]
         public LogDeveloperActivityResponse LogDeveloperActivity(string username, string activityType, DateTime timestamp)
@@ -106,8 +106,16 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Services
             Logger.Debug("Activity added to {0}'s history.", username);
 
             // Generate any possible achievements
-            int generatedAchievements = AchievementGenerator.GenerateAchievements(activity);
-            Logger.Debug("{0} achievements generated", generatedAchievements);
+            IEnumerable<AwardedAchievement> generatedAchievements = AchievementGenerator.GenerateAchievements(activity);
+            Repository.SaveAll(generatedAchievements);
+            Logger.Debug("{0} achievements generated", generatedAchievements.Count());
+
+            // Update the developers' statistics based on this new information
+            UpdateDeveloperStatistics(generatedAchievements);
+            Logger.Info("Updated developer statistics", generatedAchievements.Count());
+
+            StatisticsGenerator.UpdateRankings();
+            Logger.Info("Updated developer rankings", generatedAchievements.Count());
 
             Logger.Info("Done logging developer activity.  Developer ID: {0}; Activity ID: {1}; ActivityType: [{2}]; Timestamp: {3}",
                         developer.ID, activity.ID, activityTypeInstance.FullName, timestamp);
@@ -115,8 +123,25 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Services
             return new LogDeveloperActivityResponse()
                        {
                            ActivityID = activity.ID,
-                           AwardedAchievementCount = generatedAchievements,
+                           AwardedAchievementCount = generatedAchievements.Count(),
                        };
+        }
+
+        private void UpdateDeveloperStatistics(IEnumerable<AwardedAchievement> generatedAchievements)
+        {
+            IEnumerable<Developer> developers = generatedAchievements.Select(x => x.Developer).Distinct();
+
+            if(developers.Count() > 1)
+                Logger.Info("Activity triggered Achievements for more than the current developer.  The following developers were affected: ",
+                            string.Join(", ", developers.Select(x => x.Key).ToArray()));
+
+            foreach (Developer developer in developers)
+            {
+                Logger.Debug("Updating {0}'s statistics...", developer.Key);
+                Repository.Refresh(developer);
+                StatisticsGenerator.UpdateStatistics(developer);
+                Repository.Save(developer);
+            }
         }
 
         private static void ApplyActivityParameters(Activity activity, IDictionary<string, string> activityParameters)

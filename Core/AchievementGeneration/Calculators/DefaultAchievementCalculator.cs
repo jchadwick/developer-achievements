@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ChadwickSoftware.DeveloperAchievements.DataAccess;
 
-namespace ChadwickSoftware.DeveloperAchievements.AchievementCalculators
+namespace ChadwickSoftware.DeveloperAchievements.AchievementGeneration.Calculators
 {
     public class DefaultAchievementCalculator : IAchievementCalculator
     {

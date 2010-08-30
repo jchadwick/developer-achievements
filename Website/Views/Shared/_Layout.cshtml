@@ -6,25 +6,29 @@
 <head>
     <title>@View.Title</title>
 	<script type="text/javascript" src="@Url.Content("~/scripts/jquery-1.4.1.js")"></script>
-    <link href="@Url.Content("~/content/layout.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/xbl/theme.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div class="header">
-		<div class="nav-bar">
-			<ul>
-				<li>@Html.ActionLink("Leaderboard", "leaderboard", "Achievements")</li>
-				<li>@Html.ActionLink("Achievements", "achievements", "Achievements")</li>
-				<li>@Html.ActionLink("Developers", "developers", "Achievements")</li>
-			</ul>
+	<div id="body-container">
+		<div id="header">
+			<div id="nav-bar">
+				<ul>
+					<li>@Html.ActionLink("Leaderboard", "leaderboard", "Achievements")</li>
+					<li>@Html.ActionLink("Team Achievements", "developers", "Achievements")</li>
+					<li>@Html.ActionLink("Achievements List", "achievements", "Achievements")</li>
+				</ul>
+			</div>
+
+			<h1>@View.Title</h1>
 		</div>
-	</div>
 
-    <div class="main-content">
-    @RenderBody()
-    </div>
+		<div id="main-content">
+		@RenderBody()
+		</div>
 
-	<div class="footer">
+		<div id="footer">
+            &copy; 2010 Chadwick Software
+		</div>
 	</div>
 </body>
 </html>
