@@ -16,6 +16,9 @@
             Map(x => x.Name)
                 .Not.Nullable();
 
+            Map(x => x.LogoUrl)
+                .Length(8000);
+
             Map(x => x.TargetActivityTypeName);
 
             Map(x => x.TriggerCount);

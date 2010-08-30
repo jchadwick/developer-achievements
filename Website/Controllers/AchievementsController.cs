@@ -42,22 +42,9 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
             IQueryable<Developer> rockStars = rankedDevelopers.OrderBy(x => x.Statistics.Rank);
             IQueryable<Developer> n00bs = rankedDevelopers.OrderByDescending(x => x.Statistics.Rank);
 
-            IEnumerable<AchievementGroup> urbanAchievers = 
-                _repository.Query<Achievement>()
-                    .Select(x => new AchievementGroup() { Achievement = x })
-                    .ToList();
-            foreach (AchievementGroup achievementGroup in urbanAchievers)
-            {
-                achievementGroup.TopAwards =
-                    achievementGroup.Achievement.AwardedAchievements
-                        .OrderByDescending(y => y.Count)
-                        .OrderByDescending(y => y.LastAwardedTimestamp)
-                        .Take(5);
-            }
-
 
             // TODO: Implement Busy Bees
-            IEnumerable<ActivityGroup> busyBees = new [] { new ActivityGroup() { Name = "Check-ins"} };
+            IEnumerable<ActivityGroup> busyBees = new [] { new ActivityGroup() { Name = "CheckIn"} };
             foreach (ActivityGroup activityGroup in busyBees)
             {
                 activityGroup.ActivityCounts = Enumerable.Empty<KeyValuePair<Developer,int>>();
@@ -68,7 +55,6 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
                                                    {
                                                        RockStars = rockStars.Take(5),
                                                        n00bs = n00bs.Take(5),
-                                                       AchievementGroups = urbanAchievers,
                                                        ActivityGroups = busyBees
                                                    };
 

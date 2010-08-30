@@ -1,27 +1,47 @@
 ﻿@inherits System.Web.Mvc.WebViewPage<IEnumerable<ChadwickSoftware.DeveloperAchievements.Achievement>>
-
 @{
     View.Title = "Achievements";
     LayoutPage = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="three-column">
+    <div class="three-column achievements">
     
         <div class="panel">
             <h2 class="header">Positive</h2>
             <ul class="body">
+            @foreach(var achievement in Model.Where(x => x.Disposition == AchievementDisposition.Positive))
+            {
+                <li class="achievement positive" title="@achievement.Description">
+                    <img class="logo" src="@achievement.LogoThumbnailUrl" alt="@achievement.Description" />
+                    <span class="name">@achievement.Name</span>
+                </li>
+            }
+            </ul>
+        </div>
+    
+        <div class="panel">
+            <h2 class="header">Neutral</h2>
+            <ul class="body">
+            @foreach(var achievement in Model.Where(x => x.Disposition == AchievementDisposition.Neutral))
+            {
+                <li class="achievement neutral" title="@achievement.Description">
+                    <img class="logo" src="@achievement.LogoThumbnailUrl" alt="@achievement.Description" />
+                    <span class="name">@achievement.Name</span>
+                </li>
+            }
             </ul>
         </div>
     
         <div class="panel">
             <h2 class="header">Negative</h2>
             <ul class="body">
-            </ul>
-        </div>
-    
-        <div class="panel">
-            <h2 class="header">Medals</h2>
-            <ul class="body">
+            @foreach(var achievement in Model.Where(x => x.Disposition == AchievementDisposition.Negative))
+            {
+                <li class="achievement negative" title="@achievement.Description">
+                    <img class="logo" src="@achievement.LogoThumbnailUrl" alt="@achievement.Description" />
+                    <span class="name">@achievement.Name</span>
+                </li>
+            }
             </ul>
         </div>
     

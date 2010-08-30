@@ -42,21 +42,9 @@
     <hr />
 
 
-@foreach(var achievementGroup in ViewData.Model.AchievementGroups) {
-    <div class="panel">
-	    <h2 class="header">Top @achievementGroup.Name Achievers</h2>
-	    <ul class="body leaderboard-rankings">
-		    @foreach(var achiever in achievementGroup.TopAwards) {
-		    <li class="leaderboard-ranking">@achiever.Developer.DisplayName (Count: @achiever.Count)</li>
-		    }
-	    </ul>
-    </div>
-}
-
-
 @foreach(var activityGroup in ViewData.Model.ActivityGroups) {
     <div class="panel">
-	    <h2 class="header">Top @activityGroup.Name Performers</h2>
+	    <h2 class="header">Top @activityGroup.Name Activity</h2>
 	    <ul class="body leaderboard-rankings">
 		    @foreach(var activityCount in activityGroup.ActivityCounts) {
 		    <li class="leaderboard-ranking">@activityCount.Key.DisplayName (Count: @activityCount.Value)</li>

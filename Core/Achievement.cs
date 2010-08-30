@@ -16,6 +16,13 @@ namespace ChadwickSoftware.DeveloperAchievements
 
         public virtual string TargetActivityTypeName { get; set; }
 
+        public virtual string LogoUrl { get; set; }
+
+        public virtual string LogoThumbnailUrl
+        {
+            get { return LogoUrl; }
+        }
+
         public virtual int TriggerCount { get; set; }
 
 

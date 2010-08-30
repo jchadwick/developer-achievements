@@ -17,6 +17,7 @@ body, a
 {
 	background: #565D62 url('images/main_bg.jpg') center top no-repeat;
 	min-height: 590px;
+	height: 590px;
 	padding: 0 20px;
 }
 
@@ -89,6 +90,7 @@ body, a
 
 /****** END GLOBAL STYLES **********/
 
+
 /* Leaderboard */
 
 .leaderboard-ranking .statistics
@@ -109,4 +111,41 @@ body, a
 	{
 		color: red;
 	}	
+/****** END LEADERBOAD **********/
+
+
+/* Achievements */
+.achievements ul
+{
+	list-style: none;
+}
+	.achievement
+	{
+		min-height: 50px;
+		padding: 10px 0;
+	}
+	.achievement .logo
+	{
+		width: 60px;
+		height: 60px;
+		float: left;
+		margin-right: 10px;
+	}
+	.achievement .name
+	{
+		display: block;
+		height: 40px;
+		margin-top: 20px;
+	}
 	
+	.positive.achievement
+	{
+		color: green;
+	}
+	.neutral.achievement
+	{
+	}
+	.negative.achievement
+	{
+		color: red;
+	}

@@ -82,6 +82,7 @@
     <Compile Include="Services\Contracts\ActivityContract.cs" />
     <Compile Include="Services\DeveloperActivityService.svc.cs">
       <DependentUpon>DeveloperActivityService.svc</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\Contracts\LogDeveloperActivityResponse.svc.cs" />
     <Compile Include="Services\WebServiceBase.cs">
