@@ -37,20 +37,6 @@ namespace ChadwickSoftware.DeveloperAchievements.DataAccess
 
         protected FluentConfiguration GetConfiguration()
         {
-/*
-            AutoPersistenceModel autoMappings =
-                AutoMap.AssemblyOf<Achievement>()
-                    .Where(typeof(IEntity).IsAssignableFrom)
-                    .IgnoreBase<Entity>()
-                    .IncludeBase<Activity>()
-                    .Conventions.Add(new GlobalMappingConventions())
-                    .Conventions.Add(new SqlKeywordsPropertyMappingConvention())
-                    .Conventions.Add(new CustomForeignKeyConvention())
-                    .Override<Activity>(map => map.DiscriminateSubClassesOnColumn("TypeName"))
-                    .Override<Developer>(map => map.HasMany(x => x.History).Cascade.All())
-                    ;
-*/
-
             return Fluently.Configure()
                 .Database(GetConnectionInfo())
                 .Mappings(m => m.FluentMappings

@@ -94,7 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AchievementCalculators\DefaultAchievementCalculatorTests.cs" />
-    <Compile Include="Client\DeveloperActivityServiceClientTests.cs" />
     <Compile Include="CruiseControl\DeveloperBuildActivityTaskIntegrationTests.cs" />
     <Compile Include="CruiseControl\DeveloperBuildActivityTaskTests.cs" />
     <Compile Include="IntegrationTestFixture.cs" />
@@ -107,10 +106,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client\Client.csproj">
-      <Project>{D2D62FE5-36A4-4B45-930D-65D69374AB6D}</Project>
-      <Name>Client</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{31294D0B-4FB0-41DF-A18E-8BBDB65225CE}</Project>
       <Name>Core</Name>

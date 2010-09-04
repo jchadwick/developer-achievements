@@ -15,6 +15,7 @@ h3
 ul
 {
 	margin: 5px 0 0 0;
+	list-style: none;
 }
 
 #header, #main-content, #footer
@@ -22,31 +23,10 @@ ul
 	clear: both;
 }
 
-#nav-bar ul
-{
-	list-style: none;
-}
-
-#main-content
-{
-}
 
 .floating-card
 {
-	list-style: none;
 	float: left;
 	margin: 10px;
 	padding: 10px;
-}
-
-
-/*  Leaderboard */
-ul.leaderboard-rankings
-{
-	list-style: none;
-}
-
-.leaderboard-rankings li:first-child
-{
-	font-weight: bold;
 }

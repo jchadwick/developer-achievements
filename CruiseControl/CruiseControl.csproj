@@ -8,10 +8,11 @@
     <ProjectGuid>{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DeveloperAchievements.CruiseControl</RootNamespace>
-    <AssemblyName>DeveloperAchievements.CruiseControl</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>ChadwickSoftware.DeveloperAchievements.CruiseControl</RootNamespace>
+    <AssemblyName>ccnet.DeveloperAchievementsPlugin.plugin</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,34 +32,75 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NetReflector">
+      <HintPath>..\References\cruisecontrol\NetReflector.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="ThoughtWorks.CruiseControl.Core">
       <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="ThoughtWorks.CruiseControl.Remote, Version=1.5.7256.1, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ThoughtWorks.CruiseControl.Remote, Version=1.5.7256.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Remote.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeveloperBuildActivityTask.cs" />
+    <Compile Include="AchievementResult.cs" />
+    <Compile Include="DeveloperAchievementsPluginTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Proxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client\Client.csproj">
-      <Project>{D2D62FE5-36A4-4B45-930D-65D69374AB6D}</Project>
-      <Name>Client</Name>
-    </ProjectReference>
+    <None Include="Service References\Proxy\ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.LogDeveloperActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxy\DeveloperActivityService.wsdl" />
+    <None Include="Service References\Proxy\DeveloperActivityService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\DeveloperActivityService1.wsdl" />
+    <None Include="Service References\Proxy\DeveloperActivityService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\DeveloperActivityService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\DeveloperActivityService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Proxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\DeveloperActivityService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

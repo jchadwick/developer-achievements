@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using ChadwickSoftware.DeveloperAchievements.DataAccess;
@@ -34,6 +36,36 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
 
         }
 
+        public MvcApplication()
+        {
+            BeginRequest += CreateDatabaseOnFirstRun;
+        }
+
+        private void CreateDatabaseOnFirstRun(object sender, EventArgs e)
+        {
+            string triggerFilePath = Server.MapPath("~/firstrun");
+
+            if (File.Exists(triggerFilePath))
+            {
+                NHibernateConfiguration configuration = Kernel.Get<NHibernateConfiguration>();
+                configuration.CreateDatabase();
+
+                try
+                {
+                    File.Delete(triggerFilePath);
+                }
+                catch(Exception ex)
+                {
+                    string message =
+                        string.Format(
+                            "Your first-run configuration succeeded, but we were unable to remove the 'firstrun' trigger file.  Please delete this file ({0}) manually, otherwise you're going to rebuild your database every time!",
+                            triggerFilePath);
+                    
+                    throw new ApplicationException(message, ex);
+                }
+            }
+        }
+
         protected override void OnApplicationStarted()
         {
             CodeGeneratorSettings.AddGlobalImport("ChadwickSoftware.DeveloperAchievements");
@@ -49,7 +81,9 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
 
         protected override IKernel CreateKernel()
         {
-            Kernel = new StandardKernel(new CoreBindingModule(), new DataAccessBindingModule());
+            NinjectSettings settings = new NinjectSettings() { InjectNonPublic = true };
+
+            Kernel = new StandardKernel(settings, new CoreBindingModule(), new DataAccessBindingModule());
             
             Kernel.Bind<HttpContext>().ToMethod(ctx => HttpContext.Current).InTransientScope();
             Kernel.Bind<HttpContextBase>().ToMethod(ctx => new HttpContextWrapper(HttpContext.Current)).InTransientScope();

@@ -9,12 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{60C69D34-6AAC-48BE-94FE-40A2EE027E10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{D2D62FE5-36A4-4B45-930D-65D69374AB6D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CruiseControl", "CruiseControl\CruiseControl.csproj", "{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{60C69D34-6AAC-48BE-94FE-40A2EE027E10} = {60C69D34-6AAC-48BE-94FE-40A2EE027E10}
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Activity Listeners", "Activity Listeners", "{9E273EAE-27B6-4CE4-A661-37294FCE76E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +38,6 @@ Global
 		{60C69D34-6AAC-48BE-94FE-40A2EE027E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60C69D34-6AAC-48BE-94FE-40A2EE027E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60C69D34-6AAC-48BE-94FE-40A2EE027E10}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2D62FE5-36A4-4B45-930D-65D69374AB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2D62FE5-36A4-4B45-930D-65D69374AB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2D62FE5-36A4-4B45-930D-65D69374AB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2D62FE5-36A4-4B45-930D-65D69374AB6D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18B89C0E-FD54-4816-9EA4-736A3C7D43FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,5 +45,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18B89C0E-FD54-4816-9EA4-736A3C7D43FA} = {9E273EAE-27B6-4CE4-A661-37294FCE76E9}
 	EndGlobalSection
 EndGlobal

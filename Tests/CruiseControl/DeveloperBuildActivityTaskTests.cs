@@ -1,17 +1,18 @@
 using System.Linq;
-using ChadwickSoftware.DeveloperAchievements.Client;
-using DeveloperAchievements.CruiseControl;
 using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
 using Moq;
 using ThoughtWorks.CruiseControl.Core;
+using ThoughtWorks.CruiseControl.Core.Util;
+using ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy;
+using ProxyActivity = ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.Activity;
 
 namespace ChadwickSoftware.DeveloperAchievements.CruiseControl
 {
     [TestFixture]
     public class DeveloperBuildActivityTaskTests
     {
-        private DeveloperBuildActivityTask _task;
+        private DeveloperAchievementsPluginTask _task;
         private Mock<IDeveloperActivityService> _mockActivityService;
         private Mock<IIntegrationResult> _mockIntegrationResult;
 
@@ -24,20 +25,21 @@ namespace ChadwickSoftware.DeveloperAchievements.CruiseControl
             _mockIntegrationResult.SetupGet(x => x.Fixed).Returns(false);
             _mockIntegrationResult.SetupGet(x => x.Succeeded).Returns(false);
             _mockIntegrationResult.SetupGet(x => x.Modifications).Returns(new [] { new Modification() {UserName = "jchadwick"} });
+            _mockIntegrationResult.SetupGet(x => x.BuildProgressInformation).Returns(new BuildProgressInformation(string.Empty, string.Empty));
 
             _mockActivityService = new Mock<IDeveloperActivityService>();
 
-            _task = new DeveloperBuildActivityTask(_mockActivityService.Object);
+            _task = new DeveloperAchievementsPluginTask();
         }
 
         [Test]
         public void ShouldReportASuccessfulBuild()
         {
-            Client.Activity actualLoggedActivity = null;
+            ProxyActivity actualLoggedActivity = null;
 
             _mockActivityService
-                .Setup(x => x.LogDeveloperActivity(It.IsAny<Client.Activity>()))
-                .Callback((Client.Activity x) => actualLoggedActivity = x);
+                .Setup(x => x.LogDeveloperActivities(It.IsAny<LogDeveloperActivityRequest>()))
+                .Callback((LogDeveloperActivityRequest x) => actualLoggedActivity = x.Activities[0]);
 
             _mockIntegrationResult.SetupGet(x => x.Succeeded).Returns(true);
 
@@ -53,11 +55,11 @@ namespace ChadwickSoftware.DeveloperAchievements.CruiseControl
         [Test]
         public void ShouldReportABrokenBuild()
         {
-            Client.Activity actualLoggedActivity = null;
+            ProxyActivity actualLoggedActivity = null;
 
             _mockActivityService
-                .Setup(x => x.LogDeveloperActivity(It.IsAny<Client.Activity>()))
-                .Callback((Client.Activity x) => actualLoggedActivity = x);
+                .Setup(x => x.LogDeveloperActivities(It.IsAny<LogDeveloperActivityRequest>()))
+                .Callback((LogDeveloperActivityRequest x) => actualLoggedActivity = x.Activities[0]);
 
             _mockIntegrationResult.SetupGet(x => x.Succeeded).Returns(false);
 
@@ -73,11 +75,11 @@ namespace ChadwickSoftware.DeveloperAchievements.CruiseControl
         [Test]
         public void ShouldReportAFixedBuild()
         {
-            Client.Activity actualLoggedActivity = null;
+            ProxyActivity actualLoggedActivity = null;
 
             _mockActivityService
-                .Setup(x => x.LogDeveloperActivity(It.IsAny<Client.Activity>()))
-                .Callback((Client.Activity x) => actualLoggedActivity = x);
+                .Setup(x => x.LogDeveloperActivities(It.IsAny<LogDeveloperActivityRequest>()))
+                .Callback((LogDeveloperActivityRequest x) => actualLoggedActivity = x.Activities[0]);
 
             _mockIntegrationResult.SetupGet(x => x.Succeeded).Returns(true);
             _mockIntegrationResult.SetupGet(x => x.Fixed).Returns(true);
@@ -95,12 +97,12 @@ namespace ChadwickSoftware.DeveloperAchievements.CruiseControl
         public void ShouldSetTheBuildUrl()
         {
             const string expectedUrl = "http://build-server/12345.aspx";
-            
-            Client.Activity actualLoggedActivity = null;
+
+            ProxyActivity actualLoggedActivity = null;
 
             _mockActivityService
-                .Setup(x => x.LogDeveloperActivity(It.IsAny<Client.Activity>()))
-                .Callback((Client.Activity x) => actualLoggedActivity = x);
+                .Setup(x => x.LogDeveloperActivities(It.IsAny<LogDeveloperActivityRequest>()))
+                .Callback((LogDeveloperActivityRequest x) => actualLoggedActivity = x.Activities[0]);
 
             _mockIntegrationResult.SetupGet(x => x.Succeeded).Returns(true);
             _mockIntegrationResult.SetupGet(x => x.ProjectUrl).Returns(expectedUrl);
@@ -129,7 +131,7 @@ namespace ChadwickSoftware.DeveloperAchievements.CruiseControl
             _task.Run(_mockIntegrationResult.Object);
 
             _mockActivityService
-                .Verify(x => x.LogDeveloperActivity(It.IsAny<Client.Activity>()),
+                .Verify(x => x.LogDeveloperActivities(It.IsAny<LogDeveloperActivityRequest>()),
                         Times.Exactly(modifications.Count()));
         }
     }

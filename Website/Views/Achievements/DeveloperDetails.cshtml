@@ -1,28 +1,37 @@
-﻿@inherits System.Web.Mvc.WebViewPage<ChadwickSoftware.DeveloperAchievements.Developer>
+﻿@inherits System.Web.Mvc.WebViewPage<dynamic>
 
 @{
     View.Title = Model.DisplayName + "'s Achievements";
     LayoutPage = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="three-column">
+<div class="three-column">
     
-        <div class="panel">
-            <h2 class="header">Positive</h2>
-            <ul class="body">
-            </ul>
-        </div>
-    
-        <div class="panel">
-            <h2 class="header">Negative</h2>
-            <ul class="body">
-            </ul>
-        </div>
-    
-        <div class="panel">
-            <h2 class="header">Medals</h2>
-            <ul class="body">
-            </ul>
-        </div>
-    
+    <div class="panel">
+        <h2 class="header">Positive</h2>
+        <ul class="body">
+		@foreach(var achievement in Model.PositiveAchievements) {
+			<li> @achievement.Achievement.Name </li>
+		}
+        </ul>
     </div>
+    
+    <div class="panel">
+        <h2 class="header">Negative</h2>
+        <ul class="body">
+		@foreach(var achievement in Model.NegativeAchievements) {
+			<li> @achievement.Achievement.Name </li>
+		}
+        </ul>
+    </div>
+    
+    <div class="panel">
+        <h2 class="header">Medals</h2>
+        <ul class="body">
+		@foreach(var achievement in Model.NeutralAchievements) {
+			<li> @achievement.Achievement.Name </li>
+		}
+        </ul>
+    </div>
+    
+</div>

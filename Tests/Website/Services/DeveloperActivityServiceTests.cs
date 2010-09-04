@@ -30,7 +30,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Services
 
             LogDeveloperActivityResponse response = Service.LogDeveloperActivity(request);
 
-            Activity activity = Repository.Get<Activity>(response.ActivityID);
+            Activity activity = Repository.Get<Activity>(response.ActivityResults[0].Activity);
             Assert.That(activity, Is.Not.Null);
         }
     }

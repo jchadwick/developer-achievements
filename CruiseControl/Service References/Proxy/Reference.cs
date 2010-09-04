@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ChadwickSoftware.DeveloperAchievements.Client {
+namespace ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -24,7 +24,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.Client.Activity> ActivitiesField;
+        private System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.Activity> ActivitiesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -37,7 +37,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.Client.Activity> Activities {
+        public System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.Activity> Activities {
             get {
                 return this.ActivitiesField;
             }
@@ -164,7 +164,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.Client.ActivityResult> ActivityResultsField;
+        private System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.ActivityResult> ActivityResultsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -177,7 +177,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.Client.ActivityResult> ActivityResults {
+        public System.Collections.Generic.List<ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.ActivityResult> ActivityResults {
             get {
                 return this.ActivityResultsField;
             }
@@ -294,20 +294,20 @@ namespace ChadwickSoftware.DeveloperAchievements.Client {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Client.IDeveloperActivityService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IDeveloperActivityService")]
     public interface IDeveloperActivityService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeveloperActivityService/LogDeveloperActivities", ReplyAction="http://tempuri.org/IDeveloperActivityService/LogDeveloperActivitiesResponse")]
-        ChadwickSoftware.DeveloperAchievements.Client.LogDeveloperActivityResponse LogDeveloperActivities(ChadwickSoftware.DeveloperAchievements.Client.LogDeveloperActivityRequest request);
+        ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.LogDeveloperActivityResponse LogDeveloperActivities(ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.LogDeveloperActivityRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IDeveloperActivityServiceChannel : ChadwickSoftware.DeveloperAchievements.Client.IDeveloperActivityService, System.ServiceModel.IClientChannel {
+    public interface IDeveloperActivityServiceChannel : ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.IDeveloperActivityService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DeveloperActivityServiceClient : System.ServiceModel.ClientBase<ChadwickSoftware.DeveloperAchievements.Client.IDeveloperActivityService>, ChadwickSoftware.DeveloperAchievements.Client.IDeveloperActivityService {
+    public partial class DeveloperActivityServiceClient : System.ServiceModel.ClientBase<ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.IDeveloperActivityService>, ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.IDeveloperActivityService {
         
         public DeveloperActivityServiceClient() {
         }
@@ -328,7 +328,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client {
                 base(binding, remoteAddress) {
         }
         
-        public ChadwickSoftware.DeveloperAchievements.Client.LogDeveloperActivityResponse LogDeveloperActivities(ChadwickSoftware.DeveloperAchievements.Client.LogDeveloperActivityRequest request) {
+        public ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.LogDeveloperActivityResponse LogDeveloperActivities(ChadwickSoftware.DeveloperAchievements.CruiseControl.Proxy.LogDeveloperActivityRequest request) {
             return base.Channel.LogDeveloperActivities(request);
         }
     }

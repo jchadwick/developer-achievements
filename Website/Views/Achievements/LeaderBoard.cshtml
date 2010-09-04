@@ -7,10 +7,12 @@
     <div class="panel">
     	<h2 class="header">Rock Stars</h2>
 	    <ul class="body leaderboard-rankings">
-        @foreach(var developer in ViewData.Model.RockStars) {
+        @foreach(var developer in Model.RockStars) {
 		    <li class="leaderboard-ranking">
 			    <span class="rank">@developer.Statistics.Rank</span>
-			    <span class="name">@developer.DisplayName</span>
+			    <span class="name">
+					@Html.ActionLink(developer.DisplayName, "developers", "Achievements", new { key = developer.Key }, null)
+				</span>
                 <span class="statistics">
 				    <span class="positive">@developer.Statistics.PositiveAchievementsCount </span>
 				    <span class="negative">@developer.Statistics.NegativeAchievementsCount</span>
@@ -24,10 +26,12 @@
     <div class="panel">
 	    <h2 class="header">n00bs</h2>
 	    <ul class="body leaderboard-rankings">
-        @foreach(var developer in ViewData.Model.n00bs) {
+        @foreach(var developer in Model.n00bs) {
 		    <li class="leaderboard-ranking">
 			    <span class="rank">@developer.Statistics.Rank</span>
-			    <span class="name">@developer.DisplayName</span>
+			    <span class="name">
+					@Html.ActionLink(developer.DisplayName, "developers", "Achievements", new { key = developer.Key }, null)
+				</span>
                 <span class="statistics">
 				    <span class="positive">@developer.Statistics.PositiveAchievementsCount </span>
 				    <span class="negative">@developer.Statistics.NegativeAchievementsCount</span>
@@ -42,7 +46,7 @@
     <hr />
 
 
-@foreach(var activityGroup in ViewData.Model.ActivityGroups) {
+@foreach(var activityGroup in Model.ActivityGroups) {
     <div class="panel">
 	    <h2 class="header">Top @activityGroup.Name Activity</h2>
 	    <ul class="body leaderboard-rankings">

@@ -27,7 +27,26 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
                 return DeveloperList();
 
             Developer developer = _repository.Get<Developer>(key);
-            return View("DeveloperDetails", developer);
+
+            IEnumerable<AwardedAchievement> positiveAchievments =
+                developer.Achievements.Where(x => x.Achievement.Disposition == AchievementDisposition.Positive);
+            IEnumerable<AwardedAchievement> neutralAchievments =
+                developer.Achievements.Where(x => x.Achievement.Disposition == AchievementDisposition.Neutral);
+            IEnumerable<AwardedAchievement> negativeAchievments =
+                developer.Achievements.Where(x => x.Achievement.Disposition == AchievementDisposition.Negative);
+
+            DeveloperDetails details = new DeveloperDetails
+                                           {
+                                               Developer = developer,
+                                               NegativeAchievementCount = negativeAchievments.Count(),
+                                               NegativeAchievements = negativeAchievments,
+                                               NeutralAchievementCount = neutralAchievments.Count(),
+                                               NeutralAchievements = neutralAchievments,
+                                               PositiveAchievementCount = positiveAchievments.Count(),
+                                               PositiveAchievements = positiveAchievments,
+                                           };
+
+            return View("DeveloperDetails", details);
         }
 
         public ActionResult DeveloperList()
@@ -39,8 +58,13 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
         public ActionResult LeaderBoard()
         {
             IQueryable<Developer> rankedDevelopers = _repository.Query<Developer>().Where(x => x.Statistics.Rank != null);
-            IQueryable<Developer> rockStars = rankedDevelopers.OrderBy(x => x.Statistics.Rank);
-            IQueryable<Developer> n00bs = rankedDevelopers.OrderByDescending(x => x.Statistics.Rank);
+            IQueryable<Developer> rockStars = rankedDevelopers.OrderBy(x => x.Statistics.Rank).Take(5);
+
+            string[] rockStarDeveloperKeys = rockStars.Select(x => x.Key).ToArray();
+            IQueryable<Developer> n00bs =
+                rankedDevelopers
+                    .Where(x => !rockStarDeveloperKeys.Contains(x.Key))
+                    .OrderByDescending(x => x.Statistics.Rank);
 
 
             // TODO: Implement Busy Bees

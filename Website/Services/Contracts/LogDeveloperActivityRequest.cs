@@ -4,7 +4,14 @@ using System.Runtime.Serialization;
 
 namespace ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts
 {
-    [DataContract(Name="Activity")]
+    [DataContract]
+    public class LogDeveloperActivityRequest
+    {
+        [DataMember]
+        public ActivityContract[] Activities { get; set; }
+    }
+
+    [DataContract(Name = "Activity")]
     public class ActivityContract
     {
 
@@ -12,7 +19,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Services.Contracts
         public string ActivityType { get; set; }
 
         [DataMember]
-        public Dictionary<string, string> ActivityParameters { get; set; }
+        public IDictionary<string, string> ActivityParameters { get; set; }
 
         [DataMember]
         public DateTime? Timestamp { get; set; }

@@ -1,8 +1,13 @@
 ﻿using System.Configuration;
 using System.ServiceModel;
 
+// ReSharper disable CheckNamespace
 namespace ChadwickSoftware.DeveloperAchievements.Client
 {
+    /// <summary>
+    /// Facade on top of the WCF service client intended to provide WCF ignorance.
+    /// Feel free to use this or create your own Service Reference - same thing.
+    /// </summary>
     public class DeveloperActivityService : IDeveloperActivityService
     {
         private const string WebServiceUrlSettingKey = "DeveloperActivityService.Url";
@@ -10,6 +15,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Client
         private readonly IDeveloperActivityService _serviceClient;
 
 
+        // ReSharper disable DoNotCallOverridableMethodsInConstructor
         public DeveloperActivityService()
         {
             string webServiceUrl = ConfigurationManager.AppSettings[WebServiceUrlSettingKey];
@@ -25,11 +31,12 @@ namespace ChadwickSoftware.DeveloperAchievements.Client
         {
             _serviceClient = serviceClient;
         }
+        // ReSharper restore DoNotCallOverridableMethodsInConstructor
 
 
-        public LogDeveloperActivityResponse LogDeveloperActivity(Activity activityContract)
+        public LogDeveloperActivityResponse LogDeveloperActivities(LogDeveloperActivityRequest request)
         {
-            LogDeveloperActivityResponse response = _serviceClient.LogDeveloperActivity(activityContract);
+            LogDeveloperActivityResponse response = _serviceClient.LogDeveloperActivities(request);
             return response;
         }
 
@@ -40,3 +47,4 @@ namespace ChadwickSoftware.DeveloperAchievements.Client
         }
     }
 }
+// ReSharper restore CheckNamespace
