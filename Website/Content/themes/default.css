@@ -30,3 +30,9 @@ ul
 	margin: 10px;
 	padding: 10px;
 }
+
+
+.three-column .panel.activities-container
+{
+	width: 100%;
+}

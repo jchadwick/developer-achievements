@@ -34,4 +34,23 @@
         </ul>
     </div>
     
+
+	<div class="panel activities-container">
+		<h2>Developer Activity</h2>
+		<table class="body activities">
+			<thead>
+			<tr> <th>Name</th>  <th>Timestamp</th> </tr>
+			</thead>
+			
+			<tbody>
+			@foreach(var activity in Model.Activities) {
+				<tr> 
+					<td class="name">@activity.DisplayName</td>
+					<td class="timestamp">@activity.Timestamp</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+	</div>
+
 </div>

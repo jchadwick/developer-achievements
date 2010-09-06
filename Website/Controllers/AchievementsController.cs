@@ -23,9 +23,24 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
 
         public ActionResult Developers(string key)
         {
+            // For /developers, show the list of everyone
             if (string.IsNullOrEmpty(key))
                 return DeveloperList();
 
+            // otherwise we're looking at /developers/{username}
+            // for the developer's details
+            else
+                return DeveloperDetails(key);
+        }
+
+        public ActionResult DeveloperList()
+        {
+            IEnumerable<Developer> developers = _repository.Query<Developer>();
+            return View("DeveloperList", developers);
+        }
+
+        public ActionResult DeveloperDetails(string key)
+        {
             Developer developer = _repository.Get<Developer>(key);
 
             IEnumerable<AwardedAchievement> positiveAchievments =
@@ -37,7 +52,9 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
 
             DeveloperDetails details = new DeveloperDetails
                                            {
-                                               Developer = developer,
+                                               ActivityCount = developer.Activities.Count(),
+                                               Activities = developer.Activities,
+                                               DisplayName = developer.DisplayName,
                                                NegativeAchievementCount = negativeAchievments.Count(),
                                                NegativeAchievements = negativeAchievments,
                                                NeutralAchievementCount = neutralAchievments.Count(),
@@ -47,12 +64,6 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Controllers
                                            };
 
             return View("DeveloperDetails", details);
-        }
-
-        public ActionResult DeveloperList()
-        {
-            IEnumerable<Developer> developers = _repository.Query<Developer>();
-            return View("DeveloperList", developers);
         }
 
         public ActionResult LeaderBoard()

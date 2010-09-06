@@ -13,6 +13,7 @@ namespace ChadwickSoftware.DeveloperAchievements
         }
         private DateTime _timestamp = DateTime.Now;
 
+        public abstract string DisplayName { get; }
 
         public virtual int CompareTo(Activity other)
         {

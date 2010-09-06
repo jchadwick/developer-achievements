@@ -6,13 +6,14 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Models
     public class DeveloperDetails
     {
 
-        public Developer Developer { get; set; }
+        public string DisplayName { get; set; }
 
-        public string DisplayName
-        {
-            get { return Developer.DisplayName; }
-        }
-        
+
+        public int ActivityCount { get; set; }
+
+        public IEnumerable<Activity> Activities { get; set; }
+
+
         public int? NeutralAchievementCount { get; set; }
 
         public IEnumerable<AwardedAchievement> NeutralAchievements { get; set; }
@@ -26,6 +27,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website.Models
         public int? PositiveAchievementCount { get; set; }
 
         public IEnumerable<AwardedAchievement> PositiveAchievements { get; set; }
+
 
 
         public DeveloperDetails()

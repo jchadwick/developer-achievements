@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using ChadwickSoftware.DeveloperAchievements.Activities;
 using ChadwickSoftware.DeveloperAchievements.DataAccess;
 using Microsoft.WebPages.Compilation;
 using Ninject;
@@ -49,6 +51,80 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
             {
                 NHibernateConfiguration configuration = Kernel.Get<NHibernateConfiguration>();
                 configuration.CreateDatabase();
+
+                IEnumerable<Achievement> achievements = new [] {
+                    new Achievement()
+                        {
+                            Name = "Broken Build",
+                            Description = "Your build broke",
+                            Disposition = AchievementDisposition.Negative,
+                            Key = "BrokenBuild",
+                            Kind = AchievementKind.Accumulator,
+                            TargetActivityTypeName = typeof (BrokenBuild).Name,
+                        },
+                    new Achievement()
+                        {
+                            Name = "Successful Build",
+                            Description = "Your build was successful",
+                            Disposition = AchievementDisposition.Positive,
+                            Key = "SuccessfulBuild",
+                            Kind = AchievementKind.Accumulator,
+                            TargetActivityTypeName = typeof (SuccessfulBuild).Name,
+                        },
+                    new Achievement()
+                        {
+                            Name = "Bob the Builder",
+                            Description = "You have successfully built something for the first time!",
+                            Disposition = AchievementDisposition.Positive,
+                            Key = "BobTheBuilder",
+                            Kind = AchievementKind.Medal,
+                            TargetActivityTypeName = typeof (SuccessfulBuild).Name,
+                            TriggerCount = 1
+                        },
+                    new Achievement()
+                        {
+                            Name = "Bill the Breaker",
+                            Description = "You have broken the build for the first time!",
+                            Disposition = AchievementDisposition.Negative,
+                            Key = "BillTheBreaker",
+                            Kind = AchievementKind.Medal,
+                            TargetActivityTypeName = typeof (BrokenBuild).Name,
+                            TriggerCount = 1
+                        },
+                    new Achievement()
+                        {
+                            Name = "Medic!",
+                            Description = "You have fixed a build!",
+                            Disposition = AchievementDisposition.Positive,
+                            Key = "Medic",
+                            Kind = AchievementKind.Medal,
+                            TargetActivityTypeName = typeof (FixedBuild).Name,
+                            TriggerCount = 1
+                        },
+                    new Achievement()
+                        {
+                            Name = "Building Spree",
+                            Description = "You have 5 successful builds in a row!",
+                            Disposition = AchievementDisposition.Positive,
+                            Key = "BuildingSpree",
+                            Kind = AchievementKind.Streak,
+                            TargetActivityTypeName = typeof (SuccessfulBuild).Name,
+                            TriggerCount = 1
+                        },
+                    new Achievement()
+                        {
+                            Name = "Breaking Spree",
+                            Description = "You have 5 successful builds in a row!",
+                            Disposition = AchievementDisposition.Negative,
+                            Key = "BreakingSpree",
+                            Kind = AchievementKind.Streak,
+                            TargetActivityTypeName = typeof (BrokenBuild).Name,
+                            TriggerCount = 1
+                        }
+                };
+                
+                Kernel.Get<IRepository>().SaveAll(achievements);
+
 
                 try
                 {

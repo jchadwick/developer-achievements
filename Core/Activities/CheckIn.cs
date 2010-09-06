@@ -4,6 +4,11 @@
     {
         public virtual string Revision { get; set; }
 
+        public override string DisplayName
+        {
+            get { return "Check In"; }
+        }
+
         protected internal override string CalculateKey()
         {
             return Revision;
