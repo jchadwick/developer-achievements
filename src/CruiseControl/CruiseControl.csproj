@@ -33,8 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NetReflector">
-      <HintPath>..\References\cruisecontrol\NetReflector.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\lib\cruisecontrol\NetReflector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -43,13 +42,10 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="ThoughtWorks.CruiseControl.Core">
-      <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\lib\cruisecontrol\ThoughtWorks.CruiseControl.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ThoughtWorks.CruiseControl.Remote, Version=1.5.7256.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\References\cruisecontrol\ThoughtWorks.CruiseControl.Remote.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
+    <Reference Include="ThoughtWorks.CruiseControl.Remote">
+      <HintPath>..\..\lib\cruisecontrol\ThoughtWorks.CruiseControl.Remote.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

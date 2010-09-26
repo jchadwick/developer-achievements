@@ -76,7 +76,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
                             Name = "Bob the Builder",
                             Description = "You have successfully built something for the first time!",
                             Disposition = AchievementDisposition.Positive,
-                            Key = "BobTheBuilder",
+                            Key = "bob-the-builder",
                             Kind = AchievementKind.Medal,
                             TargetActivityTypeName = typeof (SuccessfulBuild).Name,
                             TriggerCount = 1
@@ -86,7 +86,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
                             Name = "Bill the Breaker",
                             Description = "You have broken the build for the first time!",
                             Disposition = AchievementDisposition.Negative,
-                            Key = "BillTheBreaker",
+                            Key = "bill-the-breaker",
                             Kind = AchievementKind.Medal,
                             TargetActivityTypeName = typeof (BrokenBuild).Name,
                             TriggerCount = 1
@@ -96,7 +96,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
                             Name = "Medic!",
                             Description = "You have fixed a build!",
                             Disposition = AchievementDisposition.Positive,
-                            Key = "Medic",
+                            Key = "medic",
                             Kind = AchievementKind.Medal,
                             TargetActivityTypeName = typeof (FixedBuild).Name,
                             TriggerCount = 1
@@ -106,7 +106,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
                             Name = "Building Spree",
                             Description = "You have 5 successful builds in a row!",
                             Disposition = AchievementDisposition.Positive,
-                            Key = "BuildingSpree",
+                            Key = "building-spree",
                             Kind = AchievementKind.Streak,
                             TargetActivityTypeName = typeof (SuccessfulBuild).Name,
                             TriggerCount = 1
@@ -116,7 +116,7 @@ namespace ChadwickSoftware.DeveloperAchievements.Website
                             Name = "Breaking Spree",
                             Description = "You have 5 successful builds in a row!",
                             Disposition = AchievementDisposition.Negative,
-                            Key = "BreakingSpree",
+                            Key = "breaking-spree",
                             Kind = AchievementKind.Streak,
                             TargetActivityTypeName = typeof (BrokenBuild).Name,
                             TriggerCount = 1

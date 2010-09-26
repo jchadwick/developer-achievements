@@ -35,13 +35,16 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject">
-      <HintPath>..\References\ninject\Ninject.dll</HintPath>
+      <HintPath>..\..\lib\ninject\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Extensions.Logging">
-      <HintPath>..\References\ninject\web\Ninject.Extensions.Logging.dll</HintPath>
+      <HintPath>..\..\lib\ninject\web\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging.Log4net">
+      <HintPath>..\..\lib\ninject\web\Ninject.Extensions.Logging.Log4net.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Web">
-      <HintPath>..\References\ninject\web\Ninject.Web.dll</HintPath>
+      <HintPath>..\..\lib\ninject\web\Ninject.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -181,8 +184,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>copy $(SolutionDir)References\ninject\web\*.* $(TargetDir)
-copy $(SolutionDir)References\aspnetmvc\*.* $(TargetDir)
-copy $(SolutionDir)References\nhibernate\*.* $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>copy $(SolutionDir)..\lib\ninject\web\*.* $(TargetDir)
+copy $(SolutionDir)..\lib\aspnetmvc\*.* $(TargetDir)
+copy $(SolutionDir)..\lib\nhibernate\*.* $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>
